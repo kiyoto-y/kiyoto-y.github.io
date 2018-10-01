@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="Shift_JIS">
-<title>�t�@�C���u����(�n�[�h�E�F�A�֌W) -- ������������J����</title>
+<meta charset="UTF-8">
+<title>ファイル置き場(ハードウェア関係) -- もしかしたら開発室</title>
 <style>
 <!--
-	/* �S�̓I�� */
+	/* 全体的な */
 	* {
 		margin:0;
 		padding:0;
@@ -29,7 +29,7 @@
 	th {padding:2px; border:1px solid #C0C0C0; background:#404040;}
 	td {padding:2px; border:1px solid #C0C0C0;}
 
-	/* ����p�r�p */
+	/* 特定用途用 */
 	.body {margin-right:5%;}
 	.block {margin-top:1ex; margin-bottom:3ex; margin-left:1em;}
 	.list {margin-top:0.5ex; margin-bottom:1ex; margin-left:3em;}
@@ -45,7 +45,7 @@
 	.header {text-align:right; font-size:12px;}
 	.footer {margin-top:2ex; padding:8px; border-top:1px solid #C0C0C0;}
 
-	/* �����N�X�^�C�� */
+	/* リンクスタイル */
 	a:link {color:#8080FF;}
 	a:visited {color:#C0C0C0;}
 	a:active {color:#FF8080;}
@@ -54,83 +54,83 @@
 </head>
 
 <body>
-<h1>�t�@�C���u����(�n�[�h�E�F�A�֌W)</h1>
-<P>�����ł́A������������̂̒��ŁA�n�[�h�E�F�A�̐���𔺂����̂�u���Ă���܂��B</P>
+<h1>ファイル置き場(ハードウェア関係)</h1>
+<P>ここでは、私が作ったものの中で、ハードウェアの製作を伴うものを置いてあります。</P>
 
 <div class="body">
 
-<h2>Oyayusby(FMV-KB211/611 �� USB HID �ϊ���) ���J2��</h2>
+<h2>Oyayusby(FMV-KB211/611 → USB HID 変換器) 公開2版</h2>
 <div class="block">
-<div><img src="./image/oyayusby.png" alt="[�����]"></div>
+<div><img src="./image/oyayusby.png" alt="[製作例]"></div>
 <div class="dl">
 	<div class="memo_blk1">
-		<div><A href="oyayusby_v02.zip">�_�E�����[�h(ZIP�`��)</A></div>
+		<div><A href="oyayusby_v02.zip">ダウンロード(ZIP形式)</A></div>
 	</div>
 	<div class="memo_blk2">
-		<div>�����[�X��: 2018/05/31</div>
+		<div>リリース日: 2018/05/31</div>
 	</div>
 </div>
 
-<h3>����͂ȂɁH</h3>
+<h3>これはなに？</h3>
 <pre class="block">
-�x�m�ʐ���PS/2�e�w�V�t�g�L�[�{�[�h���AUSB HID�L�[�{�[�h�Ƃ���
-�܂Ƃ��Ɏg����悤�ɂ��邽�߂̕ϊ���t�@�[���E�F�A�ł��B
-���ۂɎg�p���邽�߂ɂ́A�ʓr�n�[�h�E�F�A�𐻍삷��K�v������܂��B
-������@�ɂ��ẮA������README.TXT���Q�Ƃ��ĉ������B
+富士通製のPS/2親指シフトキーボードを、USB HIDキーボードとして
+まともに使えるようにするための変換器ファームウェアです。
+実際に使用するためには、別途ハードウェアを製作する必要があります。
+製作方法については、同封のREADME.TXTを参照して下さい。
 
-��ʓI�ȁu�u�[�g�v���g�R���Ή� PS/2��USB HID�ϊ��A�_�v�^�v�Ƃ̈Ⴂ�́A
-�@�E�N�����ɁA�L�[�{�[�h���ł̐e�w�V�t�g�ϊ�������~�߂鐧����s��
-�@�E���킹�āA�S�ẴL�[�ɌŗL�̃L�[�R�[�h���o�͂�����悤�ɂ���
-�@�E�e�w�V�t�g�L�[�{�[�h�ŗL�̃L�[�R�[�h���A��ʓI�ɔF���������̂�
-�@�@���g�p�ɂȂ��Ă���Usage ID�ɕϊ�����
-�@�E�e���L�[�㕔�Ɋg���L�[�����݂��Ȃ��L�[�{�[�h�ł́A�u�J�i���b�N�vLED��
-�@�@�_��������s�����ƂŁA�L�[�{�[�h���ł̓����Ō�����@�\�̗L��/�����𐧌�
-�Ƃ����Ƃ���ł��B
+一般的な「ブートプロトコル対応 PS/2→USB HID変換アダプタ」との違いは、
+　・起動時に、キーボード側での親指シフト変換動作を止める制御を行う
+　・あわせて、全てのキーに固有のキーコードを出力させるようにする
+　・親指シフトキーボード固有のキーコードを、一般的に認識されるものの
+　　未使用になっているUsage IDに変換する
+　・テンキー上部に拡張キーが存在しないキーボードでは、「カナロック」LEDの
+　　点灯制御を行うことで、キーボード側での同時打鍵判定機能の有効/無効を制御
+というところです。
 
-�x�m�ʂ�PS/2�e�w�V�t�g�L�[�{�[�h�ł́A�ڑ����邾���Őe�w�V�t�g���͂��ł���悤��
-�L�[�{�[�h���Őe�w�V�t�g��JIS���ȓ��͂ւ̕ϊ����s����悤�ɂȂ��Ă��܂��B
-�������A
-�@�E�}���`�^�X�N�����ł̓L�[�{�[�h�̊֒m���Ȃ��^�C�~���O�œ��̓��[�h���ω�����B
-�@�E���̓��[�h�J�ڂ�OAK�����̑���ōs���邽�߁AOAK���ꂵ�Ă��Ȃ���
-�@�@�s�v�c�ȃ^�C�~���O�œ��̓��[�h���J�ڂ��邱�ƂɂȂ�B
-�@�EJIS���Ȃɖ�����������͂��悤�Ƃ���Ƃ�(�t���L�[�̐��������Ȃ�)�A
-�@�@��u�����p�����͂ɐ؂芷����悤�ȃR�[�h���o�͂��Ă��邪�A�����OAK�����
-�@�@������@�����ɂ��Ă��邽�ߏ�肭�����Ȃ��E���r���[�ɑΉ�����Ɩ��������N�����B
-�@�E�e���L�[�㕔�Ɋg���L�[������L�[�{�[�h�ł́A�����̃L�[���g���Ȃ��B
-�@�E�����Ō����o�̃^�C�~���O��FM-OASYS���ƈقȂ�(�D��/����̖��)�B
+富士通のPS/2親指シフトキーボードでは、接続するだけで親指シフト入力ができるように
+キーボード側で親指シフト→JISかな入力への変換を行えるようになっています。
+しかし、
+　・マルチタスク環境下ではキーボードの関知しないタイミングで入力モードが変化する。
+　・入力モード遷移がOAK準拠の操作で行われるため、OAK慣れしていないと
+　　不思議なタイミングで入力モードが遷移することになる。
+　・JISかなに無い文字を入力しようとするとき(フルキーの数字部分など)、
+　　一瞬だけ英字入力に切り換えるようなコードを出力してくるが、これもOAK時代の
+　　操作方法を元にしているため上手く働かない・中途半端に対応すると問題を引き起こす。
+　・テンキー上部に拡張キーがあるキーボードでは、ここのキーが使えない。
+　・同時打鍵検出のタイミングがFM-OASYS等と異なる(好み/慣れの問題)。
 
-�Ƃ�������肪���邽�߁A�ʏ킱�̕��@�͎g�p����܂���B
-���̂��߁A������p�h���C�o�ł́A�V�X�e�����̓��̓��[�h�J�ڂ����o���ăL�[�{�[�h�֒ʒm������A
-�����̓L�[�{�[�h���ł̐e�w�V�t�g�ϊ��@�\���~�߂�(�S�ẴL�[�R�[�h���L�[�{�[�h��
-�o�͂�����悤�ɐݒ肵��)�\�t�g�I�ɐe�w�V�t�g���������������Ƃ������Ƃ��s���Ă��܂��B
+といった問題があるため、通常この方法は使用されません。
+このため、所謂専用ドライバでは、システム側の入力モード遷移を検出してキーボードへ通知したり、
+或いはキーボード側での親指シフト変換機能を止めて(全てのキーコードをキーボードに
+出力させるように設定して)ソフト的に親指シフト動作を実現したりということを行っています。
 
-�������A�����̃L�[�{�[�h���s�̂�PS/2��USB HID�ϊ��A�_�v�^�o�R�Ŏg�p�����ꍇ�A
-�L�[�{�[�h�Ƃ̒ʐM�菇���S���ʕ��ƂȂ��Ă��܂��܂��̂ŁA�����̃h���C�o�𗘗p���邱�Ƃ��ł��܂���B
-�܂��A�e�w�V�t�g�L�[�{�[�h�̐�����@�͓���ł��邽�߁A�s�̂̕ϊ��A�_�v�^����
-�s�����Ƃ͐�]�I�ł�(���������L�[�R�[�h�̕ϊ�����ł��Ȃ��͂��ł���)�B
+しかし、これらのキーボードを市販のPS/2→USB HID変換アダプタ経由で使用した場合、
+キーボードとの通信手順が全く別物となってしまいますので、既存のドライバを利用することができません。
+また、親指シフトキーボードの制御方法は特殊であるため、市販の変換アダプタから
+行うことは絶望的です(そもそもキーコードの変換すらできないはずですし)。
 
-�����ŁAUSB�f�o�C�X�@�\������1�`�b�v�}�C�R�����g���āA�e�w�V�t�g�L�[�{�[�h��p��
-�ϊ��A�_�v�^���N�������Ƃ��v�����܂����B�܂��A��肢��Ɏ������Ă���
-�g���Z2008�N8�����̕t�^������@���ꂽ�̂ŁA������g���Đ��삵�Ă݂邱�Ƃɂ��܂����B
+そこで、USBデバイス機能を持つ1チップマイコンを使って、親指シフトキーボード専用の
+変換アダプタを起こすことを思いつきました。また、上手い具合に死蔵していた
+トラ技2008年8月号の付録基板が発掘されたので、これを使って製作してみることにしました。
 </pre>
 
-<h3>���ɕK�v�Ȃ���</h3>
+<h3>他に必要なもの</h3>
 <pre class="block">
-�E�g�����W�X�^�Z�p 2008�N 8�����t�^ 78K0���(�}���c�ŒP�̔̔��L��)
-�E�~�jDIN6�s�����p�W���b�N
-�E�z���ޗ�(�c����AWG-24���x�̑����̃r�j���핞�t���r���)
-�E�H���(���c���āE�j�b�p�E���W�I�y���`�E�n��)�E���c�Ȃ�
-�EWindows�}�V���ƓK���ȃ^�[�~�i���\�t�g
+・トランジスタ技術 2008年 8月号付録 78K0基板(マルツで単体販売有り)
+・ミニDIN6ピン中継ジャック
+・配線材料(芯線がAWG-24程度の太さのビニル被服付の縒り線)
+・工具類(半田ごて・ニッパ・ラジオペンチ・刃物)・半田など
+・Windowsマシンと適当なターミナルソフト
 </pre>
 
-<h3>�O�ł���̕ύX�_</h3>
+<h3>前版からの変更点</h3>
 <pre class="block">
-���C�N���u���C�N�������ɗ���ꍇ�A�ʒm������Ԃ��Ă��܂����Ƃ��������̂��C���B
-FMV-KB211�œ����Ō��}�[�N��ʒm������悤�ɂ���Ə�肭���͂ł��Ȃ����Ƃ��������̂ŁB
+メイク→ブレイクが高速に来る場合、通知を握りつぶしてしまうことがあったのを修正。
+FMV-KB211で同時打鍵マークを通知させるようにすると上手く入力できないことがあったので。
 
-���AReadme�̌Â��L�q���C������ȂǁB
+他、Readmeの古い記述を修正するなど。
 
-���ڂ����́A������README.TXT���Q�Ƃ��ĉ������B
+※詳しくは、同封のREADME.TXTを参照して下さい。
 </pre>
 </div>
 
@@ -139,160 +139,160 @@ FMV-KB211�œ����Ō��}�[�N��ʒm������悤�ɂ���Ə�肭���͂ł��Ȃ����Ƃ��������
 <div class="noscr">.</div>
 <div class="dl">
 	<div class="memo_blk1">
-		<div><A href="https://github.com/kiyoto-y/usb_dac_stm32f4">���|�W�g����(GitHub)</A></div>
+		<div><A href="https://github.com/kiyoto-y/usb_dac_stm32f4">リポジトリへ(GitHub)</A></div>
 	</div>
 	<div class="memo_blk2">
-		<div>�����[�X��: 2017/01/22</div>
+		<div>リリース日: 2017/01/22</div>
 	</div>
 </div>
 
-<p>�ڍׂ�<a href="http://blogs.yahoo.co.jp/development_room/39679872.html">�u���O�L��</a>���Q�Ɖ������B</p>
+<p>詳細は<a href="http://blogs.yahoo.co.jp/development_room/39679872.html">ブログ記事</a>を参照下さい。</p>
 
 </div>
 
-<h2>OASYS(13�s��) to PS/2 �L�[�{�[�h�ϊ���</h2>
+<h2>OASYS(13ピン) to PS/2 キーボード変換器</h2>
 <div class="block">
-<div><img src="./image/oaskbd2ps2.jpg" alt="[�����]"></div>
+<div><img src="./image/oaskbd2ps2.jpg" alt="[製作例]"></div>
 <div class="dl">
 	<div class="memo_blk1">
-		<div><A href="oaskbd2ps2.zip">�_�E�����[�h(ZIP�`��)</A></div>
+		<div><A href="oaskbd2ps2.zip">ダウンロード(ZIP形式)</A></div>
 	</div>
 	<div class="memo_blk2">
-		<div>�����[�X��: 2016/05/28</div>
+		<div>リリース日: 2016/05/28</div>
 	</div>
 </div>
 
-<h3>����͂ȂɁH</h3>
+<h3>これはなに？</h3>
 <pre class="block">
-�x�m�� OASYS-100�V���[�Y�̈ꕔ�̃L�[�{�[�h���APS/2�L�[�{�[�h�Ƃ���
-�g����悤�ɂ���ϊ��A�_�v�^�̃t�@�[���E�F�A�ł��B
-���ۂɎg�p���邽�߂ɂ́A�ʓr�n�[�h�E�F�A�𐻍삷��K�v������܂��B
-������@�ɂ��Ă͌�q���܂��B
+富士通 OASYS-100シリーズの一部のキーボードを、PS/2キーボードとして
+使えるようにする変換アダプタのファームウェアです。
+実際に使用するためには、別途ハードウェアを製作する必要があります。
+製作方法については後述します。
 
-Windows��ł́A�ٍ�L�[�{�[�h�h���C�o�u�e�w�̗F Mk-2�v�Ƒg�ݍ��킹�邱�ƂŁA
-�T�ˍ���ʂ�̐e�w�V�t�g�L�[�{�[�h�Ƃ��Ďg�p�ł��܂��B
-(�A���AOASYS�p�L�[�{�[�h�̋@�\�L�[�̓t�@���N�V�����L�[�ƂȂ�܂��B)
-�\�[�X�R�[�h�𓯕����Ă��܂��̂ŁA�ϊ��e�[�u�����������邱�ƂŁA
-�������ʂ�OADG 106�L�[�{�[�h�Ƃ��Ďg�����Ƃ��\�ł��B
+Windows上では、拙作キーボードドライバ「親指の友 Mk-2」と組み合わせることで、
+概ね刻印通りの親指シフトキーボードとして使用できます。
+(但し、OASYS用キーボードの機能キーはファンクションキーとなります。)
+ソースコードを同封していますので、変換テーブルを改造することで、
+ごく普通のOADG 106キーボードとして使うことも可能です。
 
-��̓I�ɑΏۂƂȂ�L�[�{�[�h�́A��L�V���[�Y�p�L�[�{�[�h�̂����A
-�z�V�f���ی^���ɃR�l�N�^13�s��(DIN13�s�����ƌĂ΂�Ă�����̂ł�)��
-�ڑ������^�C�v�̃L�[�{�[�h�ł��B
-�����̃^�C�v�ł́A�L�[�{�[�h���Ƀ}�C�R��������Ă��炸�A
-�}�g���N�X�̍s��I��M�����O�Ɉ����o����Ă�����̂ƂȂ�܂��B
+具体的に対象となるキーボードは、上記シリーズ用キーボードのうち、
+ホシデン丸型多極コネクタ13ピン(DIN13ピン等と呼ばれているものです)で
+接続されるタイプのキーボードです。
+これらのタイプでは、キーボード側にマイコンが乗っておらず、
+マトリクスの行列選択信号が外に引き出されているものとなります。
 
-����m�F��FACOM6130KF1(�e�w�V�t�g�L�[�{�[�h)�ł̂ݍs���Ă��܂��B
-����ȊO�̃L�[�{�[�h���g���ꍇ�ɂ͕ϊ��e�[�u���̉������K�v��������܂���B
-���ɁAJIS / �VJIS�L�[�{�[�h�ł̓}�g���N�X�z�u���S���قȂ��Ă���\��������܂��̂ŁA
-�g�p�����ꍇ�ɂ͂����ӂ��������B
+動作確認はFACOM6130KF1(親指シフトキーボード)でのみ行っています。
+これ以外のキーボードを使う場合には変換テーブルの改造が必要かもしれません。
+特に、JIS / 新JISキーボードではマトリクス配置が全く異なっている可能性がありますので、
+使用される場合にはご注意ください。
 
-���A�I�}�P�Ƃ��āA�}�C�R��������Ă���^�C�v�̃L�[�{�[�h�ɑ΂��āA
-�����̃}�C�R���Ƌ������ēƎ��Ƀ}�g���N�X�X�L�������s���^�C�v�̎������\�ŁA
-�R�[�h��ł͂�����̂��߂̐���@�\�������Ă��܂�(�v���r���h�A������: FMR60KB201�p)�B
-������̏ڍׂɂ��ẮA�����́uOMAKE.TXT�v���Q�Ɖ������B
+尚、オマケとして、マイコンが乗っているタイプのキーボードに対して、
+既存のマイコンと共存して独自にマトリクススキャンを行うタイプの実装も可能で、
+コード上ではこちらのための制御機能を持っています(要リビルド、実装例: FMR60KB201用)。
+こちらの詳細については、同封の「OMAKE.TXT」を参照下さい。
 </pre>
 
-<h3>���ɕK�v�Ȃ���</h3>
+<h3>他に必要なもの</h3>
 <pre class="block">
-�E�g�����W�X�^�Z�p 2008�N 8�����t�^ 78K0���
-�E�~�jDIN6�s���v���O
-�E�t���b�g�P�[�u���R�l�N�^(2.54mm�s�b�` 20�s�����X)
-�E�z���ޗ�(UL3265 �O�`��1.2mm�AAWG-24/0.2sq �Q��)
-�E�H���(���c���āE�j�b�p�E���W�I�y���`�E�n��)�E���c�Ȃ�
-�EWindows�}�V���ƓK���ȃ^�[�~�i���\�t�g
+・トランジスタ技術 2008年 8月号付録 78K0基板
+・ミニDIN6ピンプラグ
+・フラットケーブルコネクタ(2.54mmピッチ 20ピンメス)
+・配線材料(UL3265 外形約1.2mm、AWG-24/0.2sq 撚線)
+・工具類(半田ごて・ニッパ・ラジオペンチ・刃物)・半田など
+・Windowsマシンと適当なターミナルソフト
 
-���ڂ����́A������README.TXT���Q�Ƃ��ĉ������B
+※詳しくは、同封のREADME.TXTを参照して下さい。
 </pre>
 </div>
 
-<h2>FMR to PS/2 �L�[�{�[�h�ϊ���</h2>
+<h2>FMR to PS/2 キーボード変換器</h2>
 <div class="block">
 <div class="noscr">.</div>
 <div class="dl">
 	<div class="memo_blk2">
-		<div>�摜�Ȃ�(Oyayusby�Ǝ��������ɂȂ�܂�)</div>
+		<div>画像なし(Oyayusbyと似た感じになります)</div>
 	</div>
 </div>
 <div class="dl">
 	<div class="memo_blk1">
-		<div><A href="fmrkbd2ps2_v3.lzh">�_�E�����[�h(LZH�`��)</A></div>
+		<div><A href="fmrkbd2ps2_v3.lzh">ダウンロード(LZH形式)</A></div>
 	</div>
 	<div class="memo_blk2">
-		<div>�����[�X��: 2015/02/08</div>
+		<div>リリース日: 2015/02/08</div>
 	</div>
 </div>
 
-<h3>����͂ȂɁH</h3>
+<h3>これはなに？</h3>
 <pre class="block">
-�x�m�� FMR / FM TOWNS / OASYS�V���[�Y�ɐڑ��\�Ȋe��L�[�{�[�h��
-PS/2�L�[�{�[�h�Ƃ��Ďg�p�ł���悤�ɂ���ϊ��A�_�v�^�̃t�@�[���E�F�A�ł��B
-���ۂɎg�p���邽�߂ɂ́A�ʓr�n�[�h�E�F�A�𐻍삷��K�v������܂��B
-������@�ɂ��Ă͌�q���܂��B
+富士通 FMR / FM TOWNS / OASYSシリーズに接続可能な各種キーボードを
+PS/2キーボードとして使用できるようにする変換アダプタのファームウェアです。
+実際に使用するためには、別途ハードウェアを製作する必要があります。
+製作方法については後述します。
 
-Windows��ł́A�ٍ�L�[�{�[�h�h���C�o�u�e�w�̗F�v�Ƒg�ݍ��킹�邱�ƂŁA
-�T�ˍ���ʂ��JIS�L�[�{�[�h/�e�w�V�t�g�L�[�{�[�h�Ƃ��Ďg�p�ł��܂��B
-(�A���AOASYS�p�L�[�{�[�h�̋@�\�L�[�̓t�@���N�V�����L�[�ƂȂ�܂��B)
-�\�[�X�R�[�h�𓯕����Ă��܂��̂ŁA�ϊ��e�[�u�����������邱�ƂŁA
-�������ʂ�OADG 106�L�[�{�[�h�Ƃ��Ďg�����Ƃ��\�ł��B
+Windows上では、拙作キーボードドライバ「親指の友」と組み合わせることで、
+概ね刻印通りのJISキーボード/親指シフトキーボードとして使用できます。
+(但し、OASYS用キーボードの機能キーはファンクションキーとなります。)
+ソースコードを同封していますので、変換テーブルを改造することで、
+ごく普通のOADG 106キーボードとして使うことも可能です。
 
-��̓I�ɑΏۂƂȂ�L�[�{�[�h�́A��L�V���[�Y�p�L�[�{�[�h�̂����A
-�q���Z�d�@HR12�V���[�Y8�s���̃R�l�N�^������JIS/�e�w�V�t�g�L�[�{�[�h�ł��B
+具体的に対象となるキーボードは、上記シリーズ用キーボードのうち、
+ヒロセ電機HR12シリーズ8ピンのコネクタを持つJIS/親指シフトキーボードです。
 
-��FMR�V���[�Y
-�@30�V���[�Y�ȊO�́A�قڑS�ẴL�[�{�[�h�ɑΉ����Ă��܂��B
-�@�A���A�G�~�����[�^�L�[�{�[�h���ł͈ꕔ�L�[���g���܂���B
+○FMRシリーズ
+　30シリーズ以外の、ほぼ全てのキーボードに対応しています。
+　但し、エミュレータキーボード等では一部キーが使えません。
 
-��FM TOWNS�V���[�Y
-�@�S�ẴL�[�{�[�h�ɑΉ����Ă��܂��B
-�@�A���A�G�~�����[�^�L�[�{�[�h�ł͈ꕔ�L�[���g���܂���B
+○FM TOWNSシリーズ
+　全てのキーボードに対応しています。
+　但し、エミュレータキーボードでは一部キーが使えません。
 
-��OASYS�V���[�Y
-�@1988�N���`�̂��̂̂ݑΉ��ł��B
-�@������ȑO�̂��̂ł͑��̃R�l�N�^(DIN13�s����)�ł̐ڑ���{�̒��t���ƂȂ��Ă���A
-�@�ʐM�����̌݊��������ƍl������ׁA�{�ϊ���͎g�p�o���܂���B
-�@���A1988�N�`��OASYS-30�n�̃L�[�{�[�h���g�p�\�Ǝv���܂����A����͖��m�F�ł�(���s��)�B
+○OASYSシリーズ
+　1988年頃～のもののみ対応です。
+　これより以前のものでは他のコネクタ(DIN13ピン等)での接続や本体直付けとなっており、
+　通信方式の互換も無いと考えられる為、本変換器は使用出来ません。
+　尚、1988年～のOASYS-30系のキーボードも使用可能と思いますが、動作は未確認です(情報不足)。
 
-JIS/�e�w�V�t�g��FMR�n/OASYS�n�𔻕ʂ��A���I�ɔz��⓮���؂芷����悤�ɂ��Ă��܂��B
-�܂��A�d�C�I�Ȉ��S���͕ۏ؂��܂��񂪁A�����̃L�[�{�[�h�𓮍쒆�ɓ��ꊷ���Ă�
-���삷��悤�Ɏ������Ă��܂��B
+JIS/親指シフトとFMR系/OASYS系を判別し、動的に配列や動作を切り換えるようにしています。
+また、電気的な安全性は保証しませんが、これらのキーボードを動作中に入れ換えても
+動作するように実装しています。
 </pre>
-<h3>����m�F�σL�[�{�[�h</h3>
+<h3>動作確認済キーボード</h3>
 <pre class="block">
-�ȉ��̃L�[�{�[�h�œ�����m�F���Ă��܂��B
+以下のキーボードで動作を確認しています。
 
-�EFMR60KB201   (FMR�p�e�w�AALT����������)
-�EFMA60KB211   (FMR�p�e�w�AALT���������)
-�EFMT-KB207    (FM TOWNS�p�e�w�AALT�L��ANICOLA�z��)
-�EFMR60KB101   (FMR�pJIS�AALT����������)
-�EFACOM6140KA1 (OASYS-100�n�e�w)
-�EOAKB-201     (OASYS-100�nJIS)
+・FMR60KB201   (FMR用親指、ALTが無いもの)
+・FMA60KB211   (FMR用親指、ALTがあるもの)
+・FMT-KB207    (FM TOWNS用親指、ALT有り、NICOLA配列)
+・FMR60KB101   (FMR用JIS、ALTが無いもの)
+・FACOM6140KA1 (OASYS-100系親指)
+・OAKB-201     (OASYS-100系JIS)
 </pre>
-<h3>���ɕK�v�Ȃ���</h3>
+<h3>他に必要なもの</h3>
 <pre class="block">
-�E�g�����W�X�^�Z�p 2008�N 8�����t�^ 78K0���
-�E�~�jDIN6�s���v���O
-�E�q���Z�d�@ HR12�V���[�Y 8�s�� ���Z�v�^�N�� (���X�R�l�N�^)
-�E�z���ޗ�(�c����AWG-24���x�̑����̃r�j���핞�t���r���)
-�E�M���k�`���[�u(��L�z���ނ����肬��[�܂���x�̂��́c��1,5mm���x?)
-�E�H���(���c���āE�j�b�p�E���W�I�y���`�E�n��)�E���c�Ȃ�
-�EWindows�}�V���ƓK���ȃ^�[�~�i���\�t�g
+・トランジスタ技術 2008年 8月号付録 78K0基板
+・ミニDIN6ピンプラグ
+・ヒロセ電機 HR12シリーズ 8ピン レセプタクル (メスコネクタ)
+・配線材料(芯線がAWG-24程度の太さのビニル被服付の縒り線)
+・熱収縮チューブ(上記配線材がぎりぎり納まる程度のもの…φ1,5mm程度?)
+・工具類(半田ごて・ニッパ・ラジオペンチ・刃物)・半田など
+・Windowsマシンと適当なターミナルソフト
 </pre>
-<h3>�O�ł���̕ύX�_</h3>
+<h3>前版からの変更点</h3>
 <pre class="block">
-�E�J�[�\���L�[���������삵���Ƃ��̋������C��
-�@��͂��Ă����Ƃ��Ɍ���Ȃ������p�^�[�����������悤�ŁA
-�@���ʂ̃L�[�p�^�[���ƔF������ĕςȑ��삪�o�Ă��܂����B
-�@���߂ĉ�͂������đΏ��ςł��B
+・カーソルキーを高速操作したときの挙動を修正
+　解析していたときに現れなかったパターンがあったようで、
+　普通のキーパターンと認識されて変な操作が出ていました。
+　改めて解析し直して対処済です。
 
-���ڂ����́A������README.TXT���Q�Ƃ��ĉ������B
+※詳しくは、同封のREADME.TXTを参照して下さい。
 </pre>
 </div>
 
 </div>
 
 <div class="footer">
-	<div style="text-align:center"><a href="index.html">�g�b�v�y�[�W</a></div>
-	<div style="text-align:right; font-size:12px">Copyright(c) 2012 ���l(Kiyoto).</div>
+	<div style="text-align:center"><a href="index.html">トップページ</a></div>
+	<div style="text-align:right; font-size:12px">Copyright(c) 2012 聖人(Kiyoto).</div>
 </div>
 
 <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->

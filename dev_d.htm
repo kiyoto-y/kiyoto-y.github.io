@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="Shift_JIS">
-<title>�t�@�C���u����(�f�[�^) -- ������������J����</title>
+<meta charset="UTF-8">
+<title>ファイル置き場(データ) -- もしかしたら開発室</title>
 <style>
 <!--
-	/* �S�̓I�� */
+	/* 全体的な */
 	* {
 		margin:0;
 		padding:0;
@@ -29,7 +29,7 @@
 	th {padding:2px; border:1px solid #C0C0C0; background:#404040;}
 	td {padding:2px; border:1px solid #C0C0C0;}
 
-	/* ����p�r�p */
+	/* 特定用途用 */
 	.body {margin-right:5%;}
 	.block {margin-top:1ex; margin-bottom:3ex; margin-left:1em;}
 	.list {margin-top:0.5ex; margin-bottom:1ex; margin-left:3em;}
@@ -45,7 +45,7 @@
 	.header {text-align:right; font-size:12px;}
 	.footer {margin-top:2ex; padding:8px; border-top:1px solid #C0C0C0;}
 
-	/* �����N�X�^�C�� */
+	/* リンクスタイル */
 	a:link {color:#8080FF;}
 	a:visited {color:#C0C0C0;}
 	a:active {color:#FF8080;}
@@ -54,82 +54,82 @@
 </head>
 
 <body>
-<h1>�t�@�C���u����(�f�[�^)</h1>
-<p>�����ł́A����������f�[�^(�v���O�����ł͂Ȃ�����)��u���Ă���܂��B</p>
+<h1>ファイル置き場(データ)</h1>
+<p>ここでは、私が作ったデータ(プログラムではないもの)を置いてあります。</p>
 
 <div class="body">
 
-<h2>�v�Z�@���ɂ��ڎ������F���̂��߂̏���(JIS X 0201����)</h2>
+<h2>計算機屋による目視文字認識のための書体(JIS X 0201準拠)</h2>
 <div class="block">
-<div><img src="./image/coding.png" alt="�t�H���g���{"></div>
-<div><A href="./image/coding_sample1.png">���͂̕\����</A>
-<A href="./image/coding_sample2.png">12px/14px�ł̑S����(1�s32����)</A></div>
+<div><img src="./image/coding.png" alt="フォント見本"></div>
+<div><A href="./image/coding_sample1.png">文章の表示例</A>
+<A href="./image/coding_sample2.png">12px/14px版の全文字(1行32文字)</A></div>
 <div class="dl">
 	<div class="memo_blk1">
-		<div><A href="coding.lzh">�_�E�����[�h(LZH�`��)</A></div>
+		<div><A href="coding.lzh">ダウンロード(LZH形式)</A></div>
 	</div>
 	<div class="memo_blk2">
-		<div>�����[�X��: 2013/09/05</div>
+		<div>リリース日: 2013/09/05</div>
 	</div>
 </div>
 
-<h3>����͂ȂɁH</h3>
+<h3>これはなに？</h3>
 <pre class="block">
-Windows��Ńv���O�����������Ă���Ƃ��A�G�f�B�^�̃t�H���g���l�r�S�V�b�N
-�Ȃǂ̈�ʓI�ȃt�H���g���ƁA�p�b�ƌ��Ŕ��f�����ɂ�������������܂��B
-�Ⴆ�ΐ�����0�Ƒ啶����O�A�L����|�Ə�������l�Ɛ�����1�Ƒ啶����I���X�c�B
+Windows上でプログラムを書いているとき、エディタのフォントがＭＳゴシック
+などの一般的なフォントだと、パッと見で判断がつきにくい文字があります。
+例えば数字の0と大文字のO、記号の|と小文字のlと数字の1と大文字のI等々…。
 
-�����ŁA���ꂼ��̕����ɕȂ̂����t�H���g������Ă݂܂����B
-���ʐ��������d�����ĕ`�������߁A���u�q�Q�v�������A�ߍ��̃t�H���g�ɂ��肪����
-���������ߑ�I�ȕ��͋C�͊F���ł����A�����̕����̓p�b�ƌ��Ŕ��f�ł���Ǝv���܂��B
+そこで、それぞれの文字に癖のついたフォントを作ってみました。
+識別性だけを重視して描いたため、やや「ヒゲ」が多く、近頃のフォントにありがちな
+小洒落た近代的な雰囲気は皆無ですが、多くの文字はパッと見で判断できると思います。
 
-���̑��A�e��g�ݍ��ݗp�r�ȂǁA�u�Ƃ肠�������ʐ����������̂��~�����v�悤��
-�Ƃ���ł��g���Ē�����Ηǂ��̂ł͂Ȃ����Ǝv���܂��B
-�Œ�s�b�`�̃V�X�e���t�H���g���Ƃ��Ă��g�p���Ē����邩������܂���B
+その他、各種組み込み用途など、「とりあえず識別性が高い書体が欲しい」ような
+ところでも使って頂ければ良いのではないかと思います。
+固定ピッチのシステムフォント等としても使用して頂けるかもしれません。
 
-�{���̂�JIS X 0201�����ł��B\�͉~�}�[�N�A~�̓A�b�p�[�o�[�Ƃ��Ă��܂��B
-�܂��A���������蓖�Ă��Ă��Ȃ�(�ܖ���`)�����ɁA���Ă̕x�m�ʋ@�Ɠ�����
-���������蓖�ĂĂ���܂�(�����b�Ȃ�)�B
+本書体はJIS X 0201準拠です。\は円マーク、~はアッパーバーとしています。
+また、文字が割り当てられていない(含未定義)部分に、かつての富士通機と同等の
+文字を割り当ててあります(時分秒など)。
 
-�������g�t�H�[�}�b�g��m���Ă��č��₷�������̂ŁA���g��FONTX2�`���ł��B
-�ʓr�S�p�t�H���g�ƃR���o�[�^(FONTX��BDF�ABDF��TTF��)��p�ӂ����Windows�p��
-TrueTypeFont�֗e�Ղɕϊ��ł��܂��B
-�܂��A�擪17�o�C�g�����΂����̃x�^�C���[�W�ɕϊ��ł��܂��B
+自分自身フォーマットを知っていて作りやすかったので、中身はFONTX2形式です。
+別途全角フォントとコンバータ(FONTX→BDF、BDF→TTF等)を用意すればWindows用の
+TrueTypeFontへ容易に変換できます。
+また、先頭17バイトを削ればただのベタイメージに変換できます。
 </pre>
 
-<h3>���C�Z���X</h3>
+<h3>ライセンス</h3>
 <pre class="block">
-KL-01�Ƃ��܂�(������lincense.txt���Q�Ɖ�����)�B
-�ǂ�Œ�����΂킩��̂ł����A���쌠��������Ȃ��ȊO�͂��Ȃ�PDS�ɋ߂����̂ł��B
-(�t�H���g���Ē��쌠����?�c�K�p�O�ł���΁A�f�[�^�Ƃ��ẮA�Ɖ��߂��ĉ������B)
-�Ȃ̂ōD���Ɏg���Ē�����΂Ǝv���Ă��܂��B
-�{���̂�ꎚ�Ƃ��ĕʂ̏��̂��N�������肵�Ă��\���܂���B
+KL-01とします(同封のlincense.txtを参照下さい)。
+読んで頂ければわかるのですが、著作権を放棄しない以外はかなりPDSに近いものです。
+(フォントって著作権効く?…適用外であれば、データとしての、と解釈して下さい。)
+なので好きに使って頂ければと思っています。
+本書体を母字として別の書体を起こしたりしても構いません。
 </pre>
 
-<h3>�O�ł���̕ύX�_</h3>
+<h3>前版からの変更点</h3>
 <pre class="block">
-���O���ς��܂���(���̃R�[�f�B���O�t�H���g)�B
-����Ƃ��X�������肢�v���܂��B
+名前が変わりました(旧称コーディングフォント)。
+今後とも宜しくお願い致します。
 
-���܂ł�16�~8px�ɉ����āA12�~6�A14�~7px��ǉ��B
-���`�̕��͋C�͎����Ă��܂����A���̂܂܃T�C�Y�𗎂Ƃ��Ă���a��������̂ŁA
-�K�v�ɉ����đS���قȂ鎚�`�ɂ��Ă����肵�Ă��܂��B
+今までの16×8pxに加えて、12×6、14×7pxを追加。
+字形の雰囲気は似せていますが、そのままサイズを落としても違和感があるので、
+必要に応じて全く異なる字形にしていたりしています。
 
-16px�̏C���_�Ƃ��ẮA
-- �r���������g�����ɂȂ�Ȃ������̂��C��(�����ƌr����������悤��)�B
+16pxの修正点としては、
+- 罫線文字が使い物にならなかったのを修正(ちゃんと罫線が引けるように)。
 
-- ���ʂ̑傫����ύX(�p�啶���ɑ΂��āA�㉺1px�����傫���T�C�Y�ɕύX)�B
-  �܂��A�A���_�[���C�����p�啶�����1px�Ⴂ�ʒu�ɕύX�B
+- 括弧の大きさを変更(英大文字に対して、上下1pxだけ大きいサイズに変更)。
+  また、アンダーラインも英大文字より1px低い位置に変更。
 
-- ���A�o�����X����(\�A���p�ł̋L���ޓ�)
+- 他、バランス調整(\、半角ｶﾅの記号類等)
 </pre>
 </div>
 
 </div>
 
 <div class="footer">
-	<div style="text-align:center"><a href="index.html">�g�b�v�y�[�W</a></div>
-	<div style="text-align:right; font-size:12px">Copyright(c) 2012 ���l(Kiyoto).</div>
+	<div style="text-align:center"><a href="index.html">トップページ</a></div>
+	<div style="text-align:right; font-size:12px">Copyright(c) 2012 聖人(Kiyoto).</div>
 </div>
 
 <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->

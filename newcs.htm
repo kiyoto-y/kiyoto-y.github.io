@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="Shift_JIS">
-<title>�d�]���Ƀv���W�F�N�g -- ������������J����</title>
+<meta charset="UTF-8">
+<title>電脳文庫プロジェクト -- もしかしたら開発室</title>
 <style>
 <!--
-	/* �S�̓I�� */
+	/* 全体的な */
 	* {
 		margin:0;
 		padding:0;
@@ -29,7 +29,7 @@
 	th {padding:2px; border:1px solid #C0C0C0; background:#404040;}
 	td {padding:2px; border:1px solid #C0C0C0;}
 
-	/* ����p�r�p */
+	/* 特定用途用 */
 	.body {margin-right:5%;}
 	.block {margin-top:1ex; margin-bottom:3ex; margin-left:1em;}
 	.list {margin-top:0.5ex; margin-bottom:1ex; margin-left:3em;}
@@ -41,7 +41,7 @@
 	.header {text-align:right; font-size:12px;}
 	.footer {margin-top:2ex; padding:8px; border-top:1px solid #C0C0C0;}
 
-	/* �����N�X�^�C�� */
+	/* リンクスタイル */
 	a:link {color:#8080FF;}
 	a:visited {color:#C0C0C0;}
 	a:active {color:#FF8080;}
@@ -51,36 +51,36 @@
 
 <body>
 
-<h1>�d�]���Ƀv���W�F�N�g</h1>
+<h1>電脳文庫プロジェクト</h1>
 
 <div class="body">
-<h2>����͂Ȃ�?</h2>
+<h2>これはなに?</h2>
 <div class="block">
-	<p>�������茾���Ă��܂��ƁA�u�\�t�g�E�n�[�h����Ȃ����W���[�������ƍ������W���[����������������A�V�����R���s���[�^�V�X�e���̊J���v�v���W�F�N�g�ł��B��̓I�ɂ́A������������邽�߂̃o�X�v���g�R��(�n�[�h���x���ł̃A�v���[�`)�ƁA���̎d�g�݂��G�~�����[�g���邽�߂�OS(�\�t�g���x���ł̃A�v���[�`)���J�����܂��B</p>
-	<p>�J�����̐��i��A�G�~�����[�g�pOS�̎傽�������v���b�g�t�H�[���́u�X�y�b�N�������g�ݍ��ݗp�}�C�R���v�ɂȂ�ƍl���Ă���̂ł����A�J�����̓s���ŁA���ʂ�IA-32/PC-AT�݊��@�p�̊J���E�����[�X���s���܂�(Bochs��GUI�f�o�b�K�ɂ͑�ς����b�ɂȂ��Ă���܂�)�B�K���AIA-32�n��Galileo�{�[�h��Quark��Edison�{�[�h��Atom�Ƃ������A�g�ݍ��݂Ŏg�������Ȑ΂��[�����Ă��܂����̂ŁA�J�[�l���̃R�[�h�͂قƂ�ǂ��̂܂܁A�{���̗p�r�ɂ��]�p�ł���񂶂�Ȃ����Ȃ��c�Ȃ�čl���Ă��܂��B</p>
-	<p>���ʕ��̓I�[�v���\�[�X�ł̌��J��\�肵�Ă��܂��B</p>
-	<p>�ڂ����������͍���A<a href="http://blogs.yahoo.co.jp/development_room/folder/1282064.html">�G�L��</a>�������ɒǋL���Ă��������ƍl���Ă��܂��B</p>
+	<p>ざっくり言ってしまうと、「ソフト・ハードを問わないモジュール実装と高いモジュール可換性を実現する、新しいコンピュータシステムの開発」プロジェクトです。具体的には、これを実現するためのバスプロトコル(ハードレベルでのアプローチ)と、その仕組みをエミュレートするためのOS(ソフトレベルでのアプローチ)を開発します。</p>
+	<p>開発物の性格上、エミュレート用OSの主たる実装先プラットフォームは「スペックが高い組み込み用マイコン」になると考えているのですが、開発環境の都合で、当面はIA-32/PC-AT互換機用の開発・リリースを行います(BochsのGUIデバッガには大変お世話になっております)。幸い、IA-32系もGalileoボードのQuarkやEdisonボードのAtomといった、組み込みで使えそうな石が充実してきましたので、カーネルのコードはほとんどそのまま、本来の用途にも転用できるんじゃないかなぁ…なんて考えています。</p>
+	<p>成果物はオープンソースでの公開を予定しています。</p>
+	<p>詳しい説明等は今後、<a href="http://blogs.yahoo.co.jp/development_room/folder/1282064.html">雑記帳</a>かここに追記していきたいと考えています。</p>
 </div>
 
-<h2>�J���ߋ�(2017/01/22����)</h2>
+<h2>開発近況(2017/01/22現在)</h2>
 <div class="block">
-	<p><a href="http://blogs.yahoo.co.jp/development_room/39678679.html">�u���O</a>�̕����Q�Ɖ������B</p>
+	<p><a href="http://blogs.yahoo.co.jp/development_room/39678679.html">ブログ</a>の方を参照下さい。</p>
 </div>
 
-<h2>�J���ߋ�(2016/04/09����)</h2>
+<h2>開発近況(2016/04/09現在)</h2>
 <div class="block">
-	<p>��N�㔼�͏��X�Z���������s����A�قڊJ�����~�܂����܂܂ƂȂ��Ă��܂����B</p>
-	<p>�ߍ�����Ɛ����ɗ]�T�����o����󋵂ɂȂ�܂����̂ŁA�J���𕜊����悤�Ǝv���܂��B</p>
-	<p>��N�̒��f���_�ł́A���W���[���ԒʐM�̎d�l���ƁA���ۂ�OS�̃^�}�S������ă��W���[���ԒʐM�������Ƃ���܂ł��������Ă��܂����B����͒ʐM�d�l�̃V�������N��OS������̌��O����(�^�X�N�X�P�W���[���Ɋւ�����B��Βʂ�ɍ��Ȃ��������Ƃ��w�ɂȂ��Ă��āc)���������A������Ƃ����T���v�����܂߂č��N���Ƀ����[�X����ׂ��撣�肽���ƍl���Ă��܂��B</p>
-	<p># ��́u�莞�������v��������p���ł��邩�ۂ��c�B</p>
+	<p>昨年後半は諸々忙しかった都合上、ほぼ開発が止まったままとなっていました。</p>
+	<p>近頃やっと生活に余裕を作り出せる状況になりましたので、開発を復活しようと思います。</p>
+	<p>昨年の中断時点では、モジュール間通信の仕様作りと、実際にOSのタマゴを作ってモジュール間通信が動くところまでを実装していました。今後は通信仕様のシュリンクとOS実装上の懸念事項(タスクスケジューラに関する問題。定石通りに作らなかったことが仇になっていて…)を解決しつつ、ちょっとしたサンプルを含めて今年中にリリースするべく頑張りたいと考えています。</p>
+	<p># 後は「定時逃走作戦」が今後も継続できるか否か…。</p>
 </div>
 
 </div>
 
 <div class="footer">
-	<div style="text-align:center"><a href="index.html">�g�b�v�y�[�W</a></div>
-	<div style="font-size:12px; text-align:right">Copyright(c) 2015 ���l(Kiyoto).</div>
-	<div style="font-size:12px; text-align:right">����₨�₢���킹���́A<a href="http://development-room.bbs.fc2.com/">�f����</a>��<a href="index.html#footer">���[��</a>�ɂĂ��肢���܂��B</div>
+	<div style="text-align:center"><a href="index.html">トップページ</a></div>
+	<div style="font-size:12px; text-align:right">Copyright(c) 2015 聖人(Kiyoto).</div>
+	<div style="font-size:12px; text-align:right">質問やお問い合わせ等は、<a href="http://development-room.bbs.fc2.com/">掲示板</a>か<a href="index.html#footer">メール</a>にてお願いします。</div>
 </div>
 
 <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
