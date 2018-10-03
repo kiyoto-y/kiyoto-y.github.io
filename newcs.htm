@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>電脳文庫プロジェクト -- もしかしたら開発室</title>
+<style>
+<!--
+	/* 全体的な */
+	* {
+		margin:0;
+		padding:0;
+	}
+	body {
+		font-family:monospace;
+		font-size:16px;
+		color:#FFFFFF;
+		background-color:#000000;
+		margin-left:8px; margin-right:8px;
+		line-height: 1.4;
+	}
+	h1 {font-size:28px; margin-top:16px; margin-bottom:16px; padding:8px; text-align: center; color:#000000; background:#C0C0C0;}
+	h2 {font-size:24px; margin-top:3ex; padding:8px; border-top:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; width:100%;}
+	h3 {font-size:20px; margin-top:1ex; padding:8px; border-bottom:1px solid #404040; width:100%;}
+	h4 {font-size:16px;}
+	
+	p {margin-top:0.5ex; margin-bottom:1ex; text-indent: 1em;}
+	
+	table {font-size:14px; margin-left:10%; margin-right:10%; margin-top:3ex; margin-bottom:3ex; border-collapse:collapse; border:1px solid #C0C0C0;}
+	th {padding:2px; border:1px solid #C0C0C0; background:#404040;}
+	td {padding:2px; border:1px solid #C0C0C0;}
+
+	/* 特定用途用 */
+	.body {margin-right:5%;}
+	.block {margin-top:1ex; margin-bottom:3ex; margin-left:1em;}
+	.list {margin-top:0.5ex; margin-bottom:1ex; margin-left:3em;}
+	
+	.memo {display:table; border:1px solid #808080; margin-left:10%; margin-right:10%; margin-top:2ex; margin-bottom:2ex;}
+	.memo_blk1 {display: table-cell; padding:8px; white-space:nowrap; font-weight:bold;}
+	.memo_blk2 {display: table-cell; padding:8px; font-size:14px; margin-right:10%; color:#E0E0E0;}
+
+	.header {text-align:right; font-size:12px;}
+	.footer {margin-top:2ex; padding:8px; border-top:1px solid #C0C0C0;}
+
+	/* リンクスタイル */
+	a:link {color:#8080FF;}
+	a:visited {color:#C0C0C0;}
+	a:active {color:#FF8080;}
+-->
+</style>
+</head>
+
+<body>
+
+<h1>電脳文庫プロジェクト</h1>
+
+<div class="body">
+<h2>これはなに?</h2>
+<div class="block">
+	<p>ざっくり言ってしまうと、「ソフト・ハードを問わないモジュール実装と高いモジュール可換性を実現する、新しいコンピュータシステムの開発」プロジェクトです。具体的には、これを実現するためのバスプロトコル(ハードレベルでのアプローチ)と、その仕組みをエミュレートするためのOS(ソフトレベルでのアプローチ)を開発します。</p>
+	<p>開発物の性格上、エミュレート用OSの主たる実装先プラットフォームは「スペックが高い組み込み用マイコン」になると考えているのですが、開発環境の都合で、当面はIA-32/PC-AT互換機用の開発・リリースを行います(BochsのGUIデバッガには大変お世話になっております)。幸い、IA-32系もGalileoボードのQuarkやEdisonボードのAtomといった、組み込みで使えそうな石が充実してきましたので、カーネルのコードはほとんどそのまま、本来の用途にも転用できるんじゃないかなぁ…なんて考えています。</p>
+	<p>成果物はオープンソースでの公開を予定しています。</p>
+	<p>詳しい説明等は今後、<a href="http://blogs.yahoo.co.jp/development_room/folder/1282064.html">雑記帳</a>かここに追記していきたいと考えています。</p>
+</div>
+
+<h2>開発近況(2017/01/22現在)</h2>
+<div class="block">
+	<p><a href="http://blogs.yahoo.co.jp/development_room/39678679.html">ブログ</a>の方を参照下さい。</p>
+</div>
+
+<h2>開発近況(2016/04/09現在)</h2>
+<div class="block">
+	<p>昨年後半は諸々忙しかった都合上、ほぼ開発が止まったままとなっていました。</p>
+	<p>近頃やっと生活に余裕を作り出せる状況になりましたので、開発を復活しようと思います。</p>
+	<p>昨年の中断時点では、モジュール間通信の仕様作りと、実際にOSのタマゴを作ってモジュール間通信が動くところまでを実装していました。今後は通信仕様のシュリンクとOS実装上の懸念事項(タスクスケジューラに関する問題。定石通りに作らなかったことが仇になっていて…)を解決しつつ、ちょっとしたサンプルを含めて今年中にリリースするべく頑張りたいと考えています。</p>
+	<p># 後は「定時逃走作戦」が今後も継続できるか否か…。</p>
+</div>
+
+</div>
+
+<div class="footer">
+	<div style="text-align:center"><a href="index.html">トップページ</a></div>
+	<div style="font-size:12px; text-align:right">Copyright(c) 2015 聖人(Kiyoto).</div>
+	<div style="font-size:12px; text-align:right">質問やお問い合わせ等は、<a href="http://development-room.bbs.fc2.com/">掲示板</a>か<a href="index.html#footer">メール</a>にてお願いします。</div>
+</div>
+
+<!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
+<script language="javascript" src="//analyzer51.fc2.com/ana/processor.php?uid=2455023" type="text/javascript"></script>
+<noscript><div align="right"><img src="//analyzer51.fc2.com/ana/icon.php?uid=2455023&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+
+</body>
+</html>

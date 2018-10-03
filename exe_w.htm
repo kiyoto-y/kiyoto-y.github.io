@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>ファイル置き場(ソフトウェア) -- もしかしたら開発室</title>
+<style>
+<!--
+	/* 全体的な */
+	* {
+		margin:0;
+		padding:0;
+	}
+	body {
+		font-family:monospace;
+		font-size:16px;
+		color:#FFFFFF;
+		background-color:#000000;
+		margin-left:8px; margin-right:8px;
+		line-height: 1.4;
+	}
+	h1 {font-size:28px; margin-top:16px; margin-bottom:16px; padding:8px; text-align: center; color:#000000; background:#C0C0C0;}
+	h2 {font-size:24px; margin-top:3ex; padding:8px; border-top:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; width:100%;}
+	h3 {font-size:20px; margin-top:1ex; padding:8px; border-bottom:1px solid #404040; width:100%;}
+	h4 {font-size:16px;}
+	
+	p {margin-top:0.5ex; margin-bottom:1ex; text-indent: 1em;}
+	
+	table {font-size:14px; margin-left:10%; margin-right:10%; margin-top:3ex; margin-bottom:3ex; border-collapse:collapse; border:1px solid #C0C0C0;}
+	th {padding:2px; border:1px solid #C0C0C0; background:#404040;}
+	td {padding:2px; border:1px solid #C0C0C0;}
+
+	/* 特定用途用 */
+	.body {margin-right:5%;}
+	.block {margin-top:1ex; margin-bottom:3ex; margin-left:1em;}
+	.list {margin-top:0.5ex; margin-bottom:1ex; margin-left:3em;}
+	
+	.memo {display:table; border:1px solid #808080; margin-left:10%; margin-right:10%; margin-top:2ex; margin-bottom:2ex;}
+	.memo_blk1 {display: table-cell; padding:8px; white-space:nowrap; font-weight:bold;}
+	.memo_blk2 {display: table-cell; padding:8px; font-size:14px; margin-right:10%; color:#E0E0E0;}
+	.dl {display:table; border:1px solid #808080; margin-left:1em; margin-right:10%; margin-top:1ex; margin-bottom:2ex;}
+	.dl_row { display:table-row; }
+	.dl_target {display: table-row; padding:8px; font-size:14px; margin-right:10%; color:#E0E0E0;}
+	.noscr {font-size:12px; color:#404040; line-height:1.0;}
+
+	.header {text-align:right; font-size:12px;}
+	.footer {margin-top:2ex; padding:8px; border-top:1px solid #C0C0C0;}
+
+	/* リンクスタイル */
+	a:link {color:#8080FF;}
+	a:visited {color:#C0C0C0;}
+	a:active {color:#FF8080;}
+-->
+</style>
+</head>
+
+<body>
+<h1>ファイル置き場</h1>
+<p>ここでは、私が作ったソフト類を公開しています。下に行くほどリリースが古い代物です。</p>
+
+<div class="body">
+
+
+<h2>Oyayusby Utility</h2>
+<div class="block">
+<div class="noscr">.</div>
+<div class="dl">
+	<div class="dl_row">
+		<div class="memo_blk1">
+			<div><a href="oyayusby_util_v01.zip">ダウンロード(ZIP形式)</a></div>
+		</div>
+		<div class="memo_blk2">
+			<div>リリース日: 2018/05/31</div>
+		</div>
+	</div>
+</div>
+<h3>動作環境</h3>
+<pre class="block">
+・Microsoft Windows 10 (x86 / x64)
+・Microsoft .NET Framework 4.6.1
+・Microsoft Visual C++ 2017 ランタイム</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+キーボードのカナロックLEDを意味のある内容に制御する為のアプリケーションです。
+具体的には、
+
+・IME ON
+・日本語入力モード(ひらがな / カタカナ)
+・かな入力モード(ローマ字入力モードではない)
+
+の全てを満たす場合に点灯させ、1つでも満たない場合は消灯させます。
+
+これにより、カナロックLEDの点灯状態に合わせて動作が変わるキーボード
+(キーボード変換アダプタ「Oyayusby」に、FMV-KB211を接続した場合)が
+意図通り正しく動作するようになります。
+
+本来、WindowsはカナロックLEDの制御を行っているようなのですが、
+これはIMEと独立して管理されていて(むしろ忘れられていて?)、
+必ずしもかな入力できる場面で点灯しているとは限らないようです。
+つまり、動作が壊れてて使い物になりません。
+
+本ソフトを使うことで、この動作を改善することが可能です。
+</pre>
+</div>
+
+
+<h2>親指の友 Mk-2 キーボードドライバ V2.0L23</h2>
+<div class="block">
+<div><img src="./image/kbf_oya_mk2.png" alt="スクリーンショット(付属の設定ツール)"></div>
+<div class="dl">
+	<div class="dl_row">
+		<div class="memo_blk1">
+			<div>警告</div>
+		</div>
+		<div class="memo_blk2">
+			<p>このソフトウェアは、Windowsのカーネルモードで動作するソフトウェアです。<strong>このため、ハードウェアの相性等によって、予期せぬ青画面や、システムの破損等が発生することも考えられます</strong>。</p>
+			<p>私が常用しているソフトですので、普段使っている機能については充分な動作テストが行われていると考えていますが、何かの拍子に、こういった重大なトラブルを招く可能性がありますので、使用される場合はそのことを十分ご理解の上、自己責任でご利用頂きますようお願いします。何か問題・損害等が発生したとしても、私は責任をとれませんし、対応もできません。</p>
+			<p><strong>何らかのトラブルが発生した際に御自分で対処できる方のみご利用ください</strong>。</p>
+		</div>
+	</div>
+</div>
+<div class="dl">
+	<div class="dl_row">
+		<div class="memo_blk1">
+			<div><a href="kbf_oya_mk2_v20l23.zip">ダウンロード(ZIP形式)</a></div>
+		</div>
+		<div class="memo_blk2">
+			<div>リリース日: 2017/04/10</div>
+		</div>
+	</div>
+</div>
+<h3>動作環境</h3>
+<pre class="block">
+OS: 32bit(x86)版: Windows 2000以降
+　　64bit(x64)版: Windows XP / 2003 Server以降
+KB: PS/2キーボード、USB HIDキーボード。
+　　富士通製PS/2接続親指シフトキーボード、富士通製USB接続親指シフトキーボード、
+　　拙作キーボード変換アダプタ(<a href="./dev_hw.htm">Oyayusby / FMRKB2PS2</a>)も使用可能です。
+
+付属設定ツールの動作には以下のものが必要です。
+・Microsoft Visual C++ 2005 Service Pack 1 再頒布可能パッケージ ATL のセキュリティ更新プログラム
+　もし、起動時に「MSVCR80.DLLが～」「サイドバイサイド構成に失敗～」等と言われたらダウンロードして下さい。
+　要求バージョンは「8.0.50727.4053」以降です。
+・Microsoft .NET Framework 2.0 (SP1)～3.5 ランタイムライブラリ
+　大抵の環境では入っているはずです。動かなかったら入れて下さい。
+</pre>
+<h3>これはなに？</h3>
+<pre class="block">
+「広義の親指シフト」入力を実現するためのキーボードドライバです。
+
+一般的な(狭義の、かな配列での)親指シフト動作に一工夫加えることにより、
+キーボードドライバ側で現在の入力モード(かな・英字等)を監視せずとも
+NICOLA配列によるかな入力・JIS配列による英字入力を行うことが可能です。
+
+また、この「一工夫」により、親指シフトの同時打鍵操作を英字入力や
+その他の目的(たとえば他の言語の入力、ショートカットキー入力)にも
+利用・転用することが可能になりました。
+
+さらにV2.0L20より、親指シフト特有の挙動である「文字キー出力の遅延」を
+体感上無くす為の機能を追加しました。これにより、文字の入力を行う場合に限りますが、
+動作の軽快さと相まってこれまで以上にストレスフリーな入力を実現できます。
+
+このドライバは富士通製PS/2接続親指シフトキーボード(FMV-KB611等)を
+制御するためのロジックを含みますので、これらの純正ドライバの代用品としても
+使うことが可能です(当然、一般的なキーボードに対するエミュレータとしても使えます)。
+
+入力モードの監視が必要なくなった為、Windows8以降の環境や、
+Windowsストアアプリ等でも安定して親指シフト入力を行うことが可能です。
+原理上モードずれが起こることもありません。
+
+その他の補助機能として、以下のような機能があります。
+・配列置換機能
+・ソフトウェアによるキーリピート(超高速・超低速対応)
+・設定の動的変更機能(予め設定済の複数設定を1キー操作で切替)
+</pre>
+<h3>前版からの変更点</h3>
+<pre class="block">
+※ドライバファイル本体については(*.sys)、旧版(V2.0L20)とバージョンを含めて同一です。
+
+・"@ / `"キーのカナ側に、": / *"キーと同じ内容を割り当て
+  これにより、キー置換機能でNICOLA J型(106キーボードと同じ位置にBackSpaceが来る)を
+  "、"の位置も含めて完全再現することができるようになりました。
+
+・設定ツールにて、配列置換テーブルのデフォルト値を削除できなかったのを修正
+  このため、106キーボード用の設定初期値を消すことで
+  NICOLA J型の配列に変更する操作が行えませんでした…。
+
+・無変換キーがNLSキーとして認識されていなかったのを修正
+  papapyanさんに御指摘頂いた点です。
+
+※詳しくは、同封のREADME.TXTを参照して下さい。
+</pre>
+</div>
+
+
+<h2>キーボードドライバ IMEモード設定プログラム</h2>
+<div class="block">
+<div class="noscr">.</div>
+<div class="dl">
+	<div class="dl_row">
+		<div class="memo_blk1">
+			<div><a href="setimemode.lzh">ダウンロード(LZH形式)</a></div>
+		</div>
+		<div class="memo_blk2">
+			<div>リリース日: 2014/02/20</div>
+		</div>
+	</div>
+</div>
+<h3>動作環境</h3>
+<pre class="block">Microsoft Windows 2000 以降(32bit版 / 64bit版?) + 
+Microsoft Visual C++ 2005 ランタイム + 
+親指シフトができるキーボードドライバ</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+拙作「親指の友」キーボードドライバをWindows 8以降で使用する為の
+実験プログラムです。
+
+当該OSでは、キーボードドライバに対して入力モード(IME状態等)が通知されないので、
+ユーザモードから監視するなりして通知をしてやる必要があります。
+
+その為の第一歩として、「ボタンを押すとキーボードへ指定モードの通知が飛ぶ」という
+大変原始的なプログラムを作ってみました。
+
+最小限のUIと、凝った処理を一切省くことにより、Windowsアプリとしては驚異的な、
+未圧縮バイナリサイズ8KBを達成しています(笑)。
+</pre>
+</div>
+
+
+<h2>親指の友 キーボードドライバ V1.0L60</h2>
+<div class="block">
+<div><img src="./image/kbf_oya.png" alt="スクリーンショット(付属の設定ツール)"></div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="kbf_oya.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2012/12/30</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">Windows 2000 以降(32bit版) + キーボード(PS/2ポートに接続したもの)。
+FMV-KB211/611/613(又は相当品)対応。</pre>
+
+<h3>!! V1.0L10をダウンロードされた方へ !!</h3>
+<pre class="block">
+このバージョンには、ドライバインストール後、設定ツールがドライバを
+認識できない(ドライバのインストールを求めるメッセージが表示されて終了する)
+致命的なバグがありました。
+V1.0L10aにて修正しましたので、該当バージョンをダウンロードされた方は、
+お手数ですが、新版をご利用下さいますようお願いします。
+
+尚、新版への更新の際は、キーボードドライバのインストール作業から実行下さい。
+</pre>
+<h3>!! V1.0L10aをダウンロードされた方へ !!</h3>
+<pre class="block">
+このバージョンには、OADGキーボードで正しく動作しないバグがありました。
+V1.0L20にて修正しましたので、該当バージョンをダウンロードされた方は、
+お手数ですが、新版をご利用下さいますようお願いします。
+
+尚、新版への更新の際は、キーボードドライバのインストール作業から実行下さい。
+</pre>
+<h3>これはなに？</h3>
+<pre class="block">
+キーボードドライバのレベルで親指シフト(NICOLA配列)の動作を
+実現する為のフィルタドライバです。
+キーボードクラスドライバとポートドライバの間に割り込む形で動作します。
+
+親指シフトの動作に加えて、個人的に前々から欲しかった、
+キーボード周りの「＋α」的な機能も多く実装しています。
+
+対応しているキーボードは以下のものです。
+・一般のPS/2接続キーボード
+  本ドライバで親指シフトエミュレータの代わりになります。
+  
+・富士通製 PS/2接続 親指シフトキーボード(FMV-KB211/611など)
+  本ドライバで各種専用ドライバの代わりになります。
+
+・富士通製 FMR/FM TOWNSシリーズ、OASYS-100シリーズ(後期)付属JIS/親指シフトキーボード
+  拙作変換アダプタを製作されて組み合わせる場合、専用ドライバとしての機能に加え、
+  特殊キーのキーコードを処理できるようになります。
+  当然ですが、このキーボード自体はPS/2通信ではありませんので、
+  変換器無しで使用することはできません。
+
+以下のような特徴があります。
+・ドライバレベルで動作
+　伝達経路の上流で処理する為、ソフトによって使えない等の相性問題が起こりにくい。
+　構造上、マシンパワー・リソース類も殆ど消費せず、軽快動作。
+
+・「親指キー」、「親指キー単独打鍵時のコード」を自由に設定可
+　当然、富士通製親指シフトキーボードでも可能。
+　例えば、一般のJISキーボードで、親指キー独立形の真似(逐次打鍵対応)をしたり、
+　専用キーボードで親指キー共用形の真似をしたり。或いは専用親指キーを別の目的に使用したり。
+
+・英字入力時の「親指シフト」機能
+　親指シフトの「同時打鍵操作」で、Shift/Ctrlキー等との「逐次打鍵」を入力したことにできる機能を搭載。
+　(例: 親指左 + C → Shift + C、親指右 + C → Ctrl + C、等。組合せ変更可能)
+
+・FMR版OAK(≒OASYS専用機)との完全互換(入力モード遷移)
+　例えば、「英字」キー打鍵で英大モードに遷移したりといった、英字・カタカナ英小文字キー周りの
+　制御を完全にエミュレート。富士通のIMEであるJapanist/OAKと組み合わせることで、
+　FMR版OAKと完全に同じ操作系にできる。また、計算機屋にとっては非常に重要な「alモード」にも対応
+　(かな/カナ→英字入力に切り替える際、英大ではなく英小に遷移するモード)。
+　さらに、右Ctrlキーの単独打鍵でIMEのON/OFFを行う機能も搭載。
+
+・かな入力操作の「ローマ字出力」
+　NICOLA配列でのかな入力をローマ字に変換して出力する機能を使用可能。
+　(例: ローマ字入力モードで 親指右 + す を押すと Z U のコードが順次出力される)
+　一部のかな入力に不具合のあるソフトでも親指シフト入力ができる。
+
+・同時打鍵判定のタイムアウト時間を自由に設定可能
+　親指シフトの動作としてはNICOLA規格準拠。
+
+・Japanist/OAKとの連携機能(勝手に)
+　IMEとして富士通のJapanist/OAKを使用している場合は、
+　親指シフトキーボード固有の刻印を出力することが可能(～、〔〕など)。
+
+・可変速キーリピート
+　キーリピートをドライバでエミュレートする機能を搭載。
+　これにより、爆走状態～ほぼ停止状態まで、リピート速度をミリ秒単位で自由に設定可能。
+
+詳しくは、付属文書の「func.txt」を参照下さい。
+</pre>
+
+<h3>今版のハイライト</h3>
+<div class="block">
+<h4>FMR/FM TOWNS/OASYSシリーズ用JIS/親指キーボードに対応</h4>
+<pre class="block">
+合わせて公開開始の拙作変換アダプタと組み合わせることで、
+各機の操作系と近い形でこれらのキーボードを使えるようになります。
+（本気でやるなら要OAK/Japanist。)
+
+本ドライバ側の変更点は、これらのキーに存在する刻印に対応した動作が行えるように、
+勝手にキーコードを割り当てたこと(漢字辞書・単語登録など)と、
+OASYS用親指シフトキーボードの対策(フルキーが一列足らないので、そこに割り当てられている
+英記号をかな配列側で入力できるようにする機能)を実装したのみです。
+
+これらの機能は、上記キーボードを使っていなくても使用可能です(前者は配列置換で可)。
+
+もちろん、前述のキーボードをただ使用するだけなら本ドライバは必須ではありませんが、
+実際キー数としても、106キーよりもこれらのキーボードの方が多いですし、
+対応する刻印が存在しなかったり、或いは不足していたりするので、
+併せて使用されたほうが便利ではあると思います。
+</pre>
+<h4>かな入力中の小指Shift動作を変更する機能</h4>
+<pre class="block">
+小指シフトを押しながら文字キーをおしたときに入力される文字として、
+
+・半濁音付(旧来からの親指シフトの動作)
+・英字配列のShift + で入力できる文字
+・かなのストレートシフトで入力できる文字
+
+のいずれかを選べるようになりました。
+
+随分前にリクエストを頂いた機能(但し、フルキー上部のかな記号を入力する、という内容で)
+だったのですが、NICOLA以降では必須でなくなった小指シフト時の動作を置き換えてしまえば
+簡単な上に色々できることに気づいて、ようやっと実装の運びとなりました。
+
+大変遅くなってしまって申し訳ないですが、もしよかったらどうぞ。
+</pre>
+<h4>説明文書の改定</h4>
+<pre class="block">
+順序の入れ換えや内容整理等。
+</pre>
+</div>
+</div>
+
+<h2>俺式フロッピィディスクドライバ V1.20</h2>
+<div class="block">
+<div class="noscr">.</div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="orefd.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2012/01/22</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">Windows 2000 以降(32bit版) + 内蔵FDD</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+Windows上でフロッピィディスクドライブを利用する為のドライバ群です。
+標準のドライバに対して、AT互換機用以外の8インチ/5.25インチ/3.5インチFDDを
+使用する際に便利な機能などを追加しています。
+
+具体的には、
+ ・BIOSの設定に関わらずドライブの認識を行う。
+   信号線が正しく配線されていれば、BIOSで設定項目が無くてもBドライブを使用可能。
+ ・複数の回転数変更制御方法に対応
+ 　2ピン操作系 …対応スーパI/O = W83977/W83627/IT8712
+ 　特殊パターン…TOMCAT方式(不完全。一部動作しないドライブがあります)
+ ・ドライブ毎に回転数変更制御の方法を指定できる。
+ ・回転数変更ができる環境では、3.5インチ1.2MBや、5.25インチ2DDなどの
+ 　ディスクの読み書き・フォーマットが可能。
+ ・DISK CHANGE信号の代わりにREADY信号が出ているドライブでも使用できる。
+ ・ステッピングレート可変。
+ ・ヘッドロードを最小限にしたり、常時スピンドルを回す設定なども用意。
+</pre> 
+<h3>前版からの変更点</h3>
+<pre class="block">
+・ドライブの存在チェックが無限ループ(2台接続されていないと起動しない)
+　になっていたバグを修正。なんかここ数年こういう情けないバグばっかり…。
+・Nuvoton(旧Winbond) W83627での回転数切替を実装。
+　但し、確認できる環境を持っていませんので、動作確認できていません。
+　正しく動作しないようでしたらご連絡下さい。
+　Nuvotonブランド後のNCT6627～というものも同等のようです。
+・TOMCAT方式が動作しないかもしれない旨を追記。
+</pre>
+</div>
+
+<h2>Beep3 WavePlayer v2.01</h2>
+<div class="block">
+<div><img src="./image/beep3wp.png" alt="スクリーンショット"></div>
+<div>※画面は旧版のものです。バージョン番号以外は同じです。</div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="beep3wp.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2011/05/23</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">Win32 + PC/AT互換機(Beep音用の出力ポートが接続されていること)</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+BEEP音用のスピーカを使い、力業でWAVEファイルを演奏するプログラムです。
+ソフトの力だけでオーディオ帯域のD/A変換(D級出力)を行います。
+同様のソフトに比べて、細かい音まで表現できるように工夫をしています。
+
+対応している形式は次のものです。
+　　　　フォーマット：WAVEファイル
+　　　　　符号化方式：リニアPCM
+　サンプリングレート：どんなものでもOK(但し上限は環境に依存)
+　　　量子化ビット数：8又は16ビット
+　　　　チャンネル数：モノラル又はステレオ(モノラルに変換しながら演奏)
+
+また、上記ファイルを、独自の1bit振幅データ(WSDファイル)へ変換出力する機能や
+変換したWSDファイルを演奏させることなども可能です。
+
+尚、このプログラムでは実行環境(特にスピーカ)をかなり選びます。
+使ってみてまともに再生できないということもあり得ますのでご了承ください。
+また、シングルコア環境下では、再生中常にCPU使用率が100%になります。
+逆に、他のタスクにCPU使用率が奪われている状態だとまともな再生はできません。
+よってバックグラウンド再生などは無理と考えてください。
+
+一応それなりのGUIを搭載しています。
+引数としてファイル名を指定して起動することも可能です。
+</pre>
+<h3>前版からの変更点</h3>
+<pre class="block">
+・設定ファイルが無い場合に起動出来ないバグを修正。
+　つまり、以前の配布パッケージだと全く立ち上がらないプログラムだった。
+　遊んでみようと思った方々、大変失礼致しました…。
+</pre>
+<h3>ほかに必要なもの</h3>
+<pre class="block">
+配布ファイルに入っているもののほかに、以下のものが必要です。
+・VB6(SP6)のランタイム
+・<A href="http://web.archive.org/web/*/http://www.ddj.com/ftp/1996/1996.05/directio.zip">GIVEIO.SYS(NT系のOSのみ必要)</A>
+　いくつかアーカイブ日が表示されるので、ダウンロードできるものを選んで下さい。
+　時間帯によっては時間がかかるかもしれません。
+</pre>
+</div>
+
+<h2>FM-TOWNS CD再生専用機化計画 V1.0L10</h2>
+<div class="block">
+<div><img src="./image/cdplaytw_b.png" style="border: 1px solid #808080;" alt="ROMアイコン多用のスクリーンショット"></div>
+<div class="dl">
+	<div class="dl_row">
+		<div class="memo_blk1">
+			<div><A href="cdplaytw_b.lzh">ダウンロード(LZH形式)</A></div>
+		</div>
+		<div class="memo_blk2">
+			<div>リリース日: 2010/07/18</div>
+		</div>
+	</div>
+</div>
+<h3>動作環境</h3>
+<pre class="block">FM TOWNSシリーズ(FDから直接ブート)</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+富士通FM TOWNS上で、内蔵CD-ROMドライブを使ってCD-DAの演奏を行う
+プログラムです。直接ブートさせる構造なので、DOSやTOWNS-OSなどを
+引っ張り出してくるのが面倒（或いは消息不明）な場合でも使うことができます。
+
+主な操作はパッドを使って行いますが、CDを入れるだけで勝手に
+無限ループ演奏を行うように作ってありますので、本体さえ存在すれば
+一応使うことは可能です。
+パッドを使った場合は、一応普通のCDプレイヤ並の事はできるように
+実装してあります。プログラム再生や、特定曲のみのリピート再生には
+対応していません。
+
+このように、最低限本体さえあれば実用にはなるように作ってあるので、
+TOWNSの生存確認にも使えると思います。
+</pre>
+</div>
+
+<h2>FMV-KB611/613 丸投げドライバ v0.01</h2>
+<div class="block">
+<div class="noscr">.</div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="kbd611.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2008/03/04</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">Windows 2000 以降(32bit版) + FMV-KB611/613 又は相当品</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+富士通が発売している親指シフトキーボード「FMV-KB613」と、
+以前販売されていた同等品「FMV-KB611」のWindows用キーボードドライバです。
+
+普通このキーボードでは、親指シフトの処理をドライバレベルで行う為、
+配列の変更や親指キーに対する機能割当などが困難でした
+本ドライバでは、ドライバ内での親指シフト処理を一切行わず、
+ほとんど全てのキーに対して一意の仮想キーコードを、また、全てのキーに対して
+一意のスキャンコードを送信するようになっています。
+つまり、親指シフト入力を行う場合は、エミュレータが別途必要となりますが、
+これにより、配列を自由にカスタマイズしたり、親指キーに機能割当を行う
+ことができるようになります。
+</pre>
+</div>
+
+<h2>なんか四角の塊を横一列揃えて消していくアレ FBIOS版 v1.0</h2>
+<div class="block">
+<div><img src="./image/square.png" style="border: 1px solid #808080;" alt="スクリーンショット"></div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="square.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2007/09/14</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">FBIOSに対応しており、MS-DOSが動作している環境</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+旧ソ連で開発された、あまりにも有名な某落ち物ゲームのクローンっぽいやつです。
+この手のゲームに於いて、FMR-CARDで快適に動くモノが見つからなかったので、
+試しに作ってみました。
+
+当初はDOS汎用として作っていたのですが、遅い文字表示ファンクションへの
+絶望と、キーや時間取得の非互換っぷりから嫌気が差したので、
+早々にFBIOS版へ衣替えしてみました。
+お陰さまで、80286 4MHz駆動でもほぼフルスピードが出ます。
+
+また、ゲーム中はFMR-CARDに於いてCPU停止時間などが無視されますが、
+アイドル時は内部で明示的にCPUを止めていますので、
+消費電力は多少押されられていると思います。
+</pre>
+</div>
+
+<h2>FMR-30系用 LCD設定プログラム v1.0</h2>
+<div class="block">
+<div class="noscr">.</div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="lcd.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2007/09/14</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">富士通 FMR-30シリーズで、MS-DOSが動作している環境</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+富士通 FMR-30シリーズのLCDコントローラを設定するプログラムです。
+具体的には、液晶の反転表示の有無、ブリンク速度(4段階)の設定ができます。
+前々からこの機能が欲しかったのですが、解析本を眺めていたところ
+偶然見つけてしまったので、とっさに書いてみました。
+
+当然ですがI/O直叩きですので、FMR-30系以外では絶対に動作させないで下さい。
+</pre>
+</div>
+
+<h2>FBIOS対応 キークリック音設定プログラム v1.0</h2>
+<div class="block">
+<div class="noscr">.</div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="click.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2007/09/14</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">FBIOSに対応し、MS-DOSが動作している環境</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+FBIOS環境下で、キーボードのキークリック音を設定するプログラムです。
+FMRシリーズの一部のキーボードは底つきがヌルく、押せたのか押せてないのか
+よく分からないことがあります。そこで、キークリック音を入れてみると
+多少マシになりそうだったので、試しに作ってみました。
+
+但し、FBIOSにはキークリック音のステータスを取得する方法が無いようで、
+キーボードの初期化やキークリック音設定を行うプログラムでは、
+間違いなく設定が変更されます。
+その場合は、面倒ですがもう一度設定し直して下さい。
+</pre>
+</div>
+
+<h2>BEEP3 (v0.95)</h2>
+<div class="block">
+<div><img src="./image/beep3.gif" alt="スクリーンショット"></div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="beep3.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2002/05/08</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">Win32 + PC/AT互換機(Beep音用の出力ポートが接続されていること)</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+BEEP音用のスピーカーから最大三重和音の音を出し、それを応用して
+曲を再生してしまうソフトです。ちなみに、対応している曲データは、専用MMLファイルのみです。
+
+また、このソフトは構造上、とても高速にスピーカーのON/OFFをするので、
+非常に非力なCPUだと使い物になりません。
+もちろん、バックグラウンド再生なんてのは、不可能です。
+
+実用的ではないじゃないか！とか言われそうですが、もともと実験で作ったようなものなので、
+音質とかは期待しないでください。
+
+
+収録された雑誌：
+　エンターブレイン　WindowsPower 2002年8月号
+　エンターブレイン　TECH Win 2002年9月号
+　エンターブレイン　フリーウェア3000
+　エンターブレイン　フリーウェア4000
+</pre>
+<h3>ほかに必要なもの</h3>
+<pre class="block">
+配布ファイルに入っているもののほかに、以下のものが必要です。
+・VB5(SP3)のランタイム
+・<A href="ftp://ftp.nsk.su/.3/magazins/ddj/1996/1996.05/directio.zip">GIVEIO.SYS(NT系のOSのみ必要)</A>
+</pre>
+</div>
+
+<h2>BOMBERS (V01L93  2002卒業生を送る版)</h2>
+<div class="block">
+<div><img src="./image/bomb2.gif" alt="スクリーンショット"></div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><a href="bm_v01l93.lzh">ダウンロード(LZH形式)</a></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2002/03/25</div>
+	</div>
+</div>
+
+<h3>動作環境</h3>
+<pre class="block">Win32 + DirectX7～ + PC/AT互換機(Beep音用の出力ポートが接続されていること)</pre>
+
+<h3>これはなに？</h3>
+<pre class="block">
+　このソフトは、FMR-70系用の4人対戦型ゲーム「BOMBERS」の改造版相当のものです。
+詳しく言うと、基本の「V01L90　過激版」がFMR-50/FM-TOWNSに移植されたものを、
+さらにDOS/Vに移植したものです。
+　
+　学校のFM-TOWNSで遊んでみたところ、面白かったので、
+「作ってみようかな？」と思い、作ってみました。現在β4です｡
+
+※FMR時代を知っているユーザーへ。
+　
+　このソフトは、FMR-50系に移植されたBOMBERSを元にしています。
+　しかも、聖人は、FMR-70系のBOMBERSを遊んだことがありません。(周りに70系がなくて…。)
+　
+　FMR-50系に移植されたBOMBERSは、きっと、雰囲気を損ね過ぎないようにしてくれていると思いますが、
+　若干の違和感があるかもしれないのでご了承ください。
+</pre>
+<h3>BOMBERSってなんだよ！</h3>
+<pre class="block">
+4人対戦ゲームです。一台のPCを使って四人で遊びます。(COMがないので一人では遊べません。二人以上で遊びましょう)
+立ち上げて、ゲームをはじめればわかると思いますが、某ゲーム(ボソバーマソ)とそっくりです(爆
+しかし、だだのそっくりゲームではなく、それなりの面白さを秘めています。
+面白さや、特徴を挙げると、次ぐらいは出てきそうです。
+
+・アイテムが最強/面白くてスゲー。
+・オバケが出てきてスゲー(現在未移植)
+・↑これらのおかげで死亡率が高くてスゲー。
+・ゲームに詳細設定があってスゲー。
+・全体的にハマリ度が高くてスゲー。
+
+まだまだ奥が深いBOMBERSですが、詳細は、同封のBM.DOCを読んでください。
+</pre>
+</div>
+
+</div>
+
+<div class="footer">
+	<div style="text-align:center"><a href="index.html">トップページ</a></div>
+	<div style="text-align:right; font-size:12px">Copyright(c) 2001 聖人(Kiyoto).</div>
+</div>
+
+<!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
+<script language="javascript" src="//analyzer51.fc2.com/ana/processor.php?uid=2455023" type="text/javascript"></script>
+<noscript><div align="right"><img src="//analyzer51.fc2.com/ana/icon.php?uid=2455023&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+
+</BODY>
+</HTML>

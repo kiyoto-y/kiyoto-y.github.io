@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<title>ファイル置き場(ハードウェア関係) -- もしかしたら開発室</title>
+<style>
+<!--
+	/* 全体的な */
+	* {
+		margin:0;
+		padding:0;
+	}
+	body {
+		font-family:monospace;
+		font-size:16px;
+		color:#FFFFFF;
+		background-color:#000000;
+		margin-left:8px; margin-right:8px;
+		line-height: 1.4;
+	}
+	h1 {font-size:28px; margin-top:16px; margin-bottom:16px; padding:8px; text-align: center; color:#000000; background:#C0C0C0;}
+	h2 {font-size:24px; margin-top:3ex; padding:8px; border-top:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; width:100%;}
+	h3 {font-size:20px; margin-top:1ex; padding:8px; border-bottom:1px solid #404040; width:100%;}
+	h4 {font-size:16px;}
+	
+	p {margin-top:0.5ex; margin-bottom:1ex; text-indent: 1em;}
+	
+	table {font-size:14px; margin-left:10%; margin-right:10%; margin-top:3ex; margin-bottom:3ex; border-collapse:collapse; border:1px solid #C0C0C0;}
+	th {padding:2px; border:1px solid #C0C0C0; background:#404040;}
+	td {padding:2px; border:1px solid #C0C0C0;}
+
+	/* 特定用途用 */
+	.body {margin-right:5%;}
+	.block {margin-top:1ex; margin-bottom:3ex; margin-left:1em;}
+	.list {margin-top:0.5ex; margin-bottom:1ex; margin-left:3em;}
+	
+	.memo {display:table; border:1px solid #808080; margin-left:10%; margin-right:10%; margin-top:2ex; margin-bottom:2ex;}
+	.memo_blk1 {display: table-cell; padding:8px; white-space:nowrap; font-weight:bold;}
+	.memo_blk2 {display: table-cell; padding:8px; font-size:14px; margin-right:10%; color:#E0E0E0;}
+	.dl {display:table; border:1px solid #808080; margin-left:1em; margin-right:10%; margin-top:1ex; margin-bottom:2ex;}
+	.dl_row { display:table; }
+	.dl_target {display: table-row; padding:8px; font-size:14px; margin-right:10%; color:#E0E0E0;}
+	.noscr {font-size:12px; color:#404040; line-height:1.0;}
+
+	.header {text-align:right; font-size:12px;}
+	.footer {margin-top:2ex; padding:8px; border-top:1px solid #C0C0C0;}
+
+	/* リンクスタイル */
+	a:link {color:#8080FF;}
+	a:visited {color:#C0C0C0;}
+	a:active {color:#FF8080;}
+-->
+</style>
+</head>
+
+<body>
+<h1>ファイル置き場(ハードウェア関係)</h1>
+<P>ここでは、私が作ったものの中で、ハードウェアの製作を伴うものを置いてあります。</P>
+
+<div class="body">
+
+<h2>Oyayusby(FMV-KB211/611 → USB HID 変換器) 公開2版</h2>
+<div class="block">
+<div><img src="./image/oyayusby.png" alt="[製作例]"></div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><A href="oyayusby_v02.zip">ダウンロード(ZIP形式)</A></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2018/05/31</div>
+	</div>
+</div>
+
+<h3>これはなに？</h3>
+<pre class="block">
+富士通製のPS/2親指シフトキーボードを、USB HIDキーボードとして
+まともに使えるようにするための変換器ファームウェアです。
+実際に使用するためには、別途ハードウェアを製作する必要があります。
+製作方法については、同封のREADME.TXTを参照して下さい。
+
+一般的な「ブートプロトコル対応 PS/2→USB HID変換アダプタ」との違いは、
+　・起動時に、キーボード側での親指シフト変換動作を止める制御を行う
+　・あわせて、全てのキーに固有のキーコードを出力させるようにする
+　・親指シフトキーボード固有のキーコードを、一般的に認識されるものの
+　　未使用になっているUsage IDに変換する
+　・テンキー上部に拡張キーが存在しないキーボードでは、「カナロック」LEDの
+　　点灯制御を行うことで、キーボード側での同時打鍵判定機能の有効/無効を制御
+というところです。
+
+富士通のPS/2親指シフトキーボードでは、接続するだけで親指シフト入力ができるように
+キーボード側で親指シフト→JISかな入力への変換を行えるようになっています。
+しかし、
+　・マルチタスク環境下ではキーボードの関知しないタイミングで入力モードが変化する。
+　・入力モード遷移がOAK準拠の操作で行われるため、OAK慣れしていないと
+　　不思議なタイミングで入力モードが遷移することになる。
+　・JISかなに無い文字を入力しようとするとき(フルキーの数字部分など)、
+　　一瞬だけ英字入力に切り換えるようなコードを出力してくるが、これもOAK時代の
+　　操作方法を元にしているため上手く働かない・中途半端に対応すると問題を引き起こす。
+　・テンキー上部に拡張キーがあるキーボードでは、ここのキーが使えない。
+　・同時打鍵検出のタイミングがFM-OASYS等と異なる(好み/慣れの問題)。
+
+といった問題があるため、通常この方法は使用されません。
+このため、所謂専用ドライバでは、システム側の入力モード遷移を検出してキーボードへ通知したり、
+或いはキーボード側での親指シフト変換機能を止めて(全てのキーコードをキーボードに
+出力させるように設定して)ソフト的に親指シフト動作を実現したりということを行っています。
+
+しかし、これらのキーボードを市販のPS/2→USB HID変換アダプタ経由で使用した場合、
+キーボードとの通信手順が全く別物となってしまいますので、既存のドライバを利用することができません。
+また、親指シフトキーボードの制御方法は特殊であるため、市販の変換アダプタから
+行うことは絶望的です(そもそもキーコードの変換すらできないはずですし)。
+
+そこで、USBデバイス機能を持つ1チップマイコンを使って、親指シフトキーボード専用の
+変換アダプタを起こすことを思いつきました。また、上手い具合に死蔵していた
+トラ技2008年8月号の付録基板が発掘されたので、これを使って製作してみることにしました。
+</pre>
+
+<h3>他に必要なもの</h3>
+<pre class="block">
+・トランジスタ技術 2008年 8月号付録 78K0基板(マルツで単体販売有り)
+・ミニDIN6ピン中継ジャック
+・配線材料(芯線がAWG-24程度の太さのビニル被服付の縒り線)
+・工具類(半田ごて・ニッパ・ラジオペンチ・刃物)・半田など
+・Windowsマシンと適当なターミナルソフト
+</pre>
+
+<h3>前版からの変更点</h3>
+<pre class="block">
+メイク→ブレイクが高速に来る場合、通知を握りつぶしてしまうことがあったのを修正。
+FMV-KB211で同時打鍵マークを通知させるようにすると上手く入力できないことがあったので。
+
+他、Readmeの古い記述を修正するなど。
+
+※詳しくは、同封のREADME.TXTを参照して下さい。
+</pre>
+</div>
+
+<h2>USB-DAC for STM32F4 Discovery</h2>
+<div class="block">
+<div class="noscr">.</div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><A href="https://github.com/kiyoto-y/usb_dac_stm32f4">リポジトリへ(GitHub)</A></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2017/01/22</div>
+	</div>
+</div>
+
+<p>詳細は<a href="http://blogs.yahoo.co.jp/development_room/39679872.html">ブログ記事</a>を参照下さい。</p>
+
+</div>
+
+<h2>OASYS(13ピン) to PS/2 キーボード変換器</h2>
+<div class="block">
+<div><img src="./image/oaskbd2ps2.jpg" alt="[製作例]"></div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><A href="oaskbd2ps2.zip">ダウンロード(ZIP形式)</A></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2016/05/28</div>
+	</div>
+</div>
+
+<h3>これはなに？</h3>
+<pre class="block">
+富士通 OASYS-100シリーズの一部のキーボードを、PS/2キーボードとして
+使えるようにする変換アダプタのファームウェアです。
+実際に使用するためには、別途ハードウェアを製作する必要があります。
+製作方法については後述します。
+
+Windows上では、拙作キーボードドライバ「親指の友 Mk-2」と組み合わせることで、
+概ね刻印通りの親指シフトキーボードとして使用できます。
+(但し、OASYS用キーボードの機能キーはファンクションキーとなります。)
+ソースコードを同封していますので、変換テーブルを改造することで、
+ごく普通のOADG 106キーボードとして使うことも可能です。
+
+具体的に対象となるキーボードは、上記シリーズ用キーボードのうち、
+ホシデン丸型多極コネクタ13ピン(DIN13ピン等と呼ばれているものです)で
+接続されるタイプのキーボードです。
+これらのタイプでは、キーボード側にマイコンが乗っておらず、
+マトリクスの行列選択信号が外に引き出されているものとなります。
+
+動作確認はFACOM6130KF1(親指シフトキーボード)でのみ行っています。
+これ以外のキーボードを使う場合には変換テーブルの改造が必要かもしれません。
+特に、JIS / 新JISキーボードではマトリクス配置が全く異なっている可能性がありますので、
+使用される場合にはご注意ください。
+
+尚、オマケとして、マイコンが乗っているタイプのキーボードに対して、
+既存のマイコンと共存して独自にマトリクススキャンを行うタイプの実装も可能で、
+コード上ではこちらのための制御機能を持っています(要リビルド、実装例: FMR60KB201用)。
+こちらの詳細については、同封の「OMAKE.TXT」を参照下さい。
+</pre>
+
+<h3>他に必要なもの</h3>
+<pre class="block">
+・トランジスタ技術 2008年 8月号付録 78K0基板
+・ミニDIN6ピンプラグ
+・フラットケーブルコネクタ(2.54mmピッチ 20ピンメス)
+・配線材料(UL3265 外形約1.2mm、AWG-24/0.2sq 撚線)
+・工具類(半田ごて・ニッパ・ラジオペンチ・刃物)・半田など
+・Windowsマシンと適当なターミナルソフト
+
+※詳しくは、同封のREADME.TXTを参照して下さい。
+</pre>
+</div>
+
+<h2>FMR to PS/2 キーボード変換器</h2>
+<div class="block">
+<div class="noscr">.</div>
+<div class="dl">
+	<div class="memo_blk2">
+		<div>画像なし(Oyayusbyと似た感じになります)</div>
+	</div>
+</div>
+<div class="dl">
+	<div class="memo_blk1">
+		<div><A href="fmrkbd2ps2_v3.lzh">ダウンロード(LZH形式)</A></div>
+	</div>
+	<div class="memo_blk2">
+		<div>リリース日: 2015/02/08</div>
+	</div>
+</div>
+
+<h3>これはなに？</h3>
+<pre class="block">
+富士通 FMR / FM TOWNS / OASYSシリーズに接続可能な各種キーボードを
+PS/2キーボードとして使用できるようにする変換アダプタのファームウェアです。
+実際に使用するためには、別途ハードウェアを製作する必要があります。
+製作方法については後述します。
+
+Windows上では、拙作キーボードドライバ「親指の友」と組み合わせることで、
+概ね刻印通りのJISキーボード/親指シフトキーボードとして使用できます。
+(但し、OASYS用キーボードの機能キーはファンクションキーとなります。)
+ソースコードを同封していますので、変換テーブルを改造することで、
+ごく普通のOADG 106キーボードとして使うことも可能です。
+
+具体的に対象となるキーボードは、上記シリーズ用キーボードのうち、
+ヒロセ電機HR12シリーズ8ピンのコネクタを持つJIS/親指シフトキーボードです。
+
+○FMRシリーズ
+　30シリーズ以外の、ほぼ全てのキーボードに対応しています。
+　但し、エミュレータキーボード等では一部キーが使えません。
+
+○FM TOWNSシリーズ
+　全てのキーボードに対応しています。
+　但し、エミュレータキーボードでは一部キーが使えません。
+
+○OASYSシリーズ
+　1988年頃～のもののみ対応です。
+　これより以前のものでは他のコネクタ(DIN13ピン等)での接続や本体直付けとなっており、
+　通信方式の互換も無いと考えられる為、本変換器は使用出来ません。
+　尚、1988年～のOASYS-30系のキーボードも使用可能と思いますが、動作は未確認です(情報不足)。
+
+JIS/親指シフトとFMR系/OASYS系を判別し、動的に配列や動作を切り換えるようにしています。
+また、電気的な安全性は保証しませんが、これらのキーボードを動作中に入れ換えても
+動作するように実装しています。
+</pre>
+<h3>動作確認済キーボード</h3>
+<pre class="block">
+以下のキーボードで動作を確認しています。
+
+・FMR60KB201   (FMR用親指、ALTが無いもの)
+・FMA60KB211   (FMR用親指、ALTがあるもの)
+・FMT-KB207    (FM TOWNS用親指、ALT有り、NICOLA配列)
+・FMR60KB101   (FMR用JIS、ALTが無いもの)
+・FACOM6140KA1 (OASYS-100系親指)
+・OAKB-201     (OASYS-100系JIS)
+</pre>
+<h3>他に必要なもの</h3>
+<pre class="block">
+・トランジスタ技術 2008年 8月号付録 78K0基板
+・ミニDIN6ピンプラグ
+・ヒロセ電機 HR12シリーズ 8ピン レセプタクル (メスコネクタ)
+・配線材料(芯線がAWG-24程度の太さのビニル被服付の縒り線)
+・熱収縮チューブ(上記配線材がぎりぎり納まる程度のもの…φ1,5mm程度?)
+・工具類(半田ごて・ニッパ・ラジオペンチ・刃物)・半田など
+・Windowsマシンと適当なターミナルソフト
+</pre>
+<h3>前版からの変更点</h3>
+<pre class="block">
+・カーソルキーを高速操作したときの挙動を修正
+　解析していたときに現れなかったパターンがあったようで、
+　普通のキーパターンと認識されて変な操作が出ていました。
+　改めて解析し直して対処済です。
+
+※詳しくは、同封のREADME.TXTを参照して下さい。
+</pre>
+</div>
+
+</div>
+
+<div class="footer">
+	<div style="text-align:center"><a href="index.html">トップページ</a></div>
+	<div style="text-align:right; font-size:12px">Copyright(c) 2012 聖人(Kiyoto).</div>
+</div>
+
+<!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
+<script language="javascript" src="//analyzer51.fc2.com/ana/processor.php?uid=2455023" type="text/javascript"></script>
+<noscript><div align="right"><img src="//analyzer51.fc2.com/ana/icon.php?uid=2455023&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+
+</BODY>
+</HTML>
