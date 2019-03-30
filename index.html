@@ -26,11 +26,9 @@
 	
 	p {margin-top:0.5ex; margin-bottom:1ex; text-indent: 1em;}
 	
-	/* 他とは違う */
-	table {/*font-size:14px;*/ width:90%; margin-left:5%; margin-right:5%; margin-top:3ex; margin-bottom:3ex; border-collapse:collapse; border:0px solid #C0C0C0;}
-	th {padding:2px; border:0px solid #C0C0C0; background:#404040;}
-	td {padding:2px; border:0px solid #C0C0C0;}
-	/* ここまで */
+	table {font-size:14px; margin-left:10%; margin-right:10%; margin-top:3ex; margin-bottom:3ex; border-collapse:collapse; border:1px solid #C0C0C0;}
+	th {padding:2px; border:1px solid #C0C0C0; background:#404040;}
+	td {padding:2px; border:1px solid #C0C0C0;}
 	
 	/* 特定用途用 */
 	.body {margin-right:5%;}
@@ -50,6 +48,9 @@
 	a:active {color:#FF8080;}
 
 	/* ページ固有 */
+	.col { float:left; }
+	.col_end { clear:left; }
+	
 	.menu { display:table; border:0 width: 98%; margin-left:1%; margin-right:1%; margin-top:2ex; margin-bottom:2ex;}
 	.menu_tr {display: table-row; }
 	.menu_td {display: table-cell; padding:8px; }
@@ -62,122 +63,119 @@
 </head>
 
 <body>
-<table>
-	<tr>
-		<td colspan=2>
-		 	<div align="center"><div style="background-image:url(./image/title.jpg); height:142px; width:800px;">
-				<div style="padding:48px; text-align:center; line-height: 32px">
-					<div style="font-size:20px">もしかしたら開発室</div>
-				</div>
-			</div></div>
-		</td>
-	</tr>
-	<tr>
-		<td colspan=2>
-			<div align="center"><div style="display:table; border:1px solid #808080; margin-left:10%; margin-right:10%; margin-top:2ex; margin-bottom:2ex;">
-				<div class="memo_blk1">サイト移転のお知らせ</div>
-				<div class="memo_blk2"><p>Yahoo!ジオシティーズのサービス終了に伴い、本サイトは下記に移転します。</p>
-					<p><a href="https://kiyoto-y.github.io/">https://kiyoto-y.github.io/</a></p>
-					<p>恐れ入りますが、ブックマークやリンクの更新をお願い致します。</p>
-				</div>
-			</div></div>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<div align="center" style="padding:8px;">
-				<!-- 旧カウンタ
-					<IMG SRC="http://counter.geocities.jp/ncounter.cgi?id=development_room" ALT="アクセス数カウンタ">
-				 -->
-				<!-- FC2カウンター ここから -->
-				<script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=24140805&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=24140805&main=1" /></noscript>
-				<!-- FC2カウンター ここまで -->
-			</div>
-		</td>
-		<td rowspan=2 style="vertical-align:top; min-width:480px;">
-			<div class="body">
-			<h3>成果物</h3>
-			<div class="block">
-				<div class="block">
-					<div><A href="exe_w.htm">ファイル置き場(ソフトウェア)</A><span class="date"> - 2018/05/31</span></div>
-					<p>自作ソフトなどを配布しています。</p>
-				</div>
-				<div class="block">
-					<div><A href="dev_hw.htm">ファイル置き場(ハードウェア関係)</A><span class="date"> - 2018/05/31</span></div>
-					<p>自作ファーム/ハード製作方法などを置いています。</p>
-				</div>
-				<div class="block">
-					<div><A href="dev_d.htm">ファイル置き場(データ)</A><span class="date"> - 2013/09/05</span></div>
-					<p>自作データなどを配布しています。</p>
-				</div>
-				<div class="block">
-					<div><A href="exe_o.htm">ファイル置き場(OSASK関係)</A><span class="date"> - 2007/03/03</span></div>
-					<p>OSASK関係のソフト/データはこちらに集めています。</p>
-				</div>
-				<div class="block">
-					<div><A href="newcs.htm">電脳文庫プロジェクト</A><span class="date"> - 2018/12/24</span></div>
-					<p>新しい電子計算機システムを作ろう!という計画です。</p>
-				</div>
-			</div>
-			<h3>資料集</h3>
-			<div class="block">
-				<div class="block">
-					<div><A href="5inch.htm">色々な5インチFDDをAT互換機に付けてみる</A><span class="date"> - 2015/02/08</span></div>
-					<p>そのまんまです。</p>
-				</div>
-				<div class="block">
-					<div><A href="fmr-card.htm">FMR-CARDのページ</A><span class="date"> - 2009/12/16</span></div>
-					<p>単三電池2本で8時間動くパソコン「FMR-CARD」の紹介です。</p>
-				</div>
-				<div class="block">
-					<div><A href="fmv-kb611.htm">FMV-KB611のページ</A><span class="date"> - 2015/02/08</span></div>
-					<p>親指シフトキーボードFMV-KB611の情報です。</p>
-				</div>
-				<div class="block">
-					<div><A href="fkb.htm">富士通の板バネ式メカニカルキーボードについてのまとめページ</A><span class="date"> - 2012/01/22</span></div>
-					<p>そのまんまです。</p>
-				</div>
-			</div>
-			<h3>その他</h3>
-			<div class="block">
-				<div class="block">
-					<div><a href="http://blogs.yahoo.co.jp/development_room">雑記帳(ブログ)</a></div>
-					<p>色々書きます。</p>
-				</div>
-				<div class="block">
-					<div><a href="http://development-room.bbs.fc2.com/">掲示板(ゲストブック)</a></div>
-					<p>質問、不具合報告、要望などがあればどうぞ。</p>
-					<div class="menu"><div class="menu_tr">
-						<div class="menu_tdnw">過去ログ: </div>
-						<div class="menu_td"><p><A href="@geoboard/">旧掲示板!?兼雑記帳</A>、<A href="guest.htm">～2008/08</A>、<A href="guest2.htm">～2010/11</A>、<A href="guest3.htm">～2014/04</A></p></div>
-					</div></div>
-				</div>
-				<div class="block">
-					<div><A href="link.htm">リンク</A><span class="date"> - 2015/02/08</span></div>
-					<p>そのまんまです。</p>
-				</div>
-			</div>
-			</div>
-			
-		</td>
-	</tr>
-	<tr><td style="vertical-align:top;">
-		<div style="text-align: center">
-			<div>更新履歴</div>
+<div align="center"><div style="background-image:url(./image/title.jpg); height:142px; width:800px;">
+	<div style="padding:48px; text-align:center; line-height: 32px">
+		<div style="font-size:20px">もしかしたら開発室</div>
+	</div>
+</div></div>
+<div align="center"><div style="display:table; border:1px solid #808080; margin-left:10%; margin-right:10%; margin-top:2ex; margin-bottom:2ex;">
+	<div class="memo_blk1">サイト移転のお知らせ</div>
+	<div class="memo_blk2"><p>Yahoo!ジオシティーズのサービス終了に伴い、本サイトは下記に移転しました。</p>
+		<p><a href="https://kiyoto-y.github.io/">https://kiyoto-y.github.io/</a></p>
+		<p>恐れ入りますが、ブックマークやリンクの更新をお願い致します。</p>
+	</div>
+</div></div>
+<div align="center">
+	<!-- FC2カウンター ここから -->
+	<script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=24140805&main=1"></script><noscript><img src="//counter1.fc2.com/counter_img.php?id=24140805&main=1" /></noscript>
+	<!-- FC2カウンター ここまで -->
+</div>
+<div style="display:table; margin-right:auto; margin-left:auto;">
+<div class="col">
+	<div class="body">
+	<h3>更新履歴</h3>
+	<div class="block">
+		<div class="block">
+			<div><A href="https://github.com/kiyoto-y/kiyoto-y.github.io/commits/master">github.io移転後の更新履歴</A><span class="date"> - 随時</span></div>
 		</div>
-	</td></tr>
-	<tr><td colspan = 2>
-		<div class="menu">
-			<div class="menu_tr">
-				<div style="font-size:14px">Copyright(c) 2001 聖人(Kiyoto).</div>
-			</div>
-			<div class="menu_tr" id="footer">
-				<div style="font-size:14px">お問い合わせ: pc98_fmrｱｯﾄﾏｰｸyahoo.co.jp</div>
-				<div style="font-size:12px">※ｱｯﾄﾏｰｸ→@。但し、差し支えなければ<a href="http://development-room.bbs.fc2.com/">ゲストブック</a>を使って下さい。メールだと誤分別で気がつかない可能性があるので…。)</div>
-			</div>
+		<div class="block">
+			<div><A href="https://github.com/kiyoto-y/kiyoto-y.github.io/commit/1cefc1506238ca1e7a5d9d4217fe60bde128b8ad">ジオシティーズ時代の更新履歴</A><span class="date"> - 2019/03/30</span></div>
 		</div>
-	</td></tr>
-</table>
+	</div>
+	<h3>成果物</h3>
+	<div class="block">
+		<div class="block">
+			<div><A href="https://github.com/kiyoto-y?tab=repositories">リポジトリ一覧</A><span class="date"> - 随時</span></div>
+			<p>自作ソフトなどを配布しています。最新のものはこちらに集約予定です。</p>
+		</div>
+		<div class="block">
+			<div><A href="exe_w.htm">ファイル置き場(ソフトウェア)</A><span class="date"> - 2018/05/31</span></div>
+			<p>自作ソフトなどを配布しています。</p>
+		</div>
+		<div class="block">
+			<div><A href="dev_hw.htm">ファイル置き場(ハードウェア関係)</A><span class="date"> - 2018/05/31</span></div>
+			<p>自作ファーム/ハード製作方法などを置いています。</p>
+		</div>
+		<div class="block">
+			<div><A href="dev_d.htm">ファイル置き場(データ)</A><span class="date"> - 2013/09/05</span></div>
+			<p>自作データなどを配布しています。</p>
+		</div>
+		<div class="block">
+			<div><A href="exe_o.htm">ファイル置き場(OSASK関係)</A><span class="date"> - 2007/03/03</span></div>
+			<p>古のOSASK関係のアーカイブです。</p>
+		</div>
+		<div class="block">
+			<div><A href="newcs.htm">電脳文庫プロジェクト</A><span class="date"> - 2018/12/24</span></div>
+			<p>新しい電子計算機システムを作ろう!という計画です。</p>
+		</div>
+	</div>
+	</div>
+</div>
+<div class="col">
+	<div class="body">
+	<h3>資料集</h3>
+	<div class="block">
+		<div class="block">
+			<div><A href="5inch.htm">色々な5インチFDDをAT互換機に付けてみる</A><span class="date"> - 2015/02/08</span></div>
+			<p>そのまんまです。</p>
+		</div>
+		<div class="block">
+			<div><A href="fmr-card.htm">FMR-CARDのページ</A><span class="date"> - 2009/12/16</span></div>
+			<p>単三電池2本で8時間動くパソコン「FMR-CARD」の紹介です。</p>
+		</div>
+		<div class="block">
+			<div><A href="fmv-kb611.htm">FMV-KB611のページ</A><span class="date"> - 2015/02/08</span></div>
+			<p>親指シフトキーボードFMV-KB611の情報です。</p>
+		</div>
+		<div class="block">
+			<div><A href="fkb.htm">富士通の板バネ式メカニカルキーボードについてのまとめページ</A><span class="date"> - 2012/01/22</span></div>
+			<p>そのまんまです。</p>
+		</div>
+	</div>
+	<h3>その他</h3>
+	<div class="block">
+		<div class="block">
+			<div><a href="http://blogs.yahoo.co.jp/development_room">雑記帳(ブログ)</a></div>
+			<p>色々書きます。</p>
+		</div>
+		<div class="block">
+			<div><a href="http://development-room.bbs.fc2.com/">掲示板(ゲストブック)</a></div>
+			<p>質問、不具合報告、要望などがあればどうぞ。</p>
+			<div class="menu"><div class="menu_tr">
+				<div class="menu_tdnw">過去ログ: </div>
+				<div class="menu_td"><p><A href="@geoboard/">旧掲示板!?兼雑記帳</A>、<A href="guest.htm">～2008/08</A>、<A href="guest2.htm">～2010/11</A>、<A href="guest3.htm">～2014/04</A></p></div>
+			</div></div>
+		</div>
+		<div class="block">
+			<div><A href="link.htm">リンク</A><span class="date"> - 2015/02/08</span></div>
+			<p>そのまんまです。</p>
+		</div>
+	</div>
+	</div>
+</div>
+<div class="col_end">
+</div>
+</div>
+
+<div class="menu">
+	<div class="menu_tr">
+		<div style="font-size:14px">Copyright(c) 2001 聖人(Kiyoto).</div>
+	</div>
+	<div class="menu_tr" id="footer">
+		<div style="font-size:14px">お問い合わせ: pc98_fmrｱｯﾄﾏｰｸyahoo.co.jp</div>
+		<div style="font-size:12px">※ｱｯﾄﾏｰｸ→@。但し、差し支えなければ<a href="http://development-room.bbs.fc2.com/">ゲストブック</a>を使って下さい。メールだと誤分別で気がつかない可能性があるので…。)</div>
+	</div>
+</div>
 
 <!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
 <script language="javascript" src="//analyzer51.fc2.com/ana/processor.php?uid=2455023" type="text/javascript"></script>
