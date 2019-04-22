@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>お手入れについて -- 富士通の板バネ式メカニカルキーボードについてのまとめページ -- もしかしたら開発室</title>
+<style>
+<!--
+	/* 全体的な */
+	* {
+		margin:0;
+		padding:0;
+	}
+	body {
+		font-family:monospace;
+		font-size:16px;
+		color:#FFFFFF;
+		background-color:#000000;
+		margin-left:8px; margin-right:8px;
+		line-height: 1.4;
+	}
+	h1 {font-size:28px; margin-top:16px; margin-bottom:16px; padding:8px; text-align: center; color:#000000; background:#C0C0C0;}
+	h2 {font-size:24px; margin-top:3ex; padding:8px; border-top:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; width:100%;}
+	h3 {font-size:20px; margin-top:1ex; padding:8px; border-bottom:1px solid #404040; width:100%;}
+	h4 {font-size:16px;}
+	
+	p {margin-top:0.5ex; margin-bottom:1ex; text-indent: 1em;}
+	
+	table {font-size:14px; margin-left:10%; margin-right:10%; margin-top:3ex; margin-bottom:3ex; border-collapse:collapse; border:1px solid #C0C0C0;}
+	th {padding:2px; border:1px solid #C0C0C0; background:#404040;}
+	td {padding:2px; border:1px solid #C0C0C0;}
+
+	/* 特定用途用 */
+	.body {margin-right:5%;}
+	.block {margin-top:1ex; margin-bottom:3ex; margin-left:1em;}
+	.list {margin-top:0.5ex; margin-bottom:1ex; margin-left:3em;}
+	
+	.memo {display:table; border:1px solid #808080; margin-left:10%; margin-right:10%; margin-top:2ex; margin-bottom:2ex;}
+	.memo_blk1 {display: table-cell; padding:8px; white-space:nowrap; font-weight:bold;}
+	.memo_blk2 {display: table-cell; padding:8px; font-size:14px; margin-right:10%; color:#E0E0E0;}
+
+	.header {text-align:right; font-size:12px;}
+	.footer {margin-top:2ex; padding:8px; border-top:1px solid #C0C0C0;}
+
+	/* リンクスタイル */
+	a:link {color:#8080FF;}
+	a:visited {color:#FFC080;}
+	a:active {color:#FF8080;}
+-->
+</style>
+</head>
+<body>
+<h1>富士通の板バネ式メカニカルキーボードについてのまとめページ -- お手入れについて</h1>
+<div style="text-align: center">
+	<img src="./image/fkb/facom6130kf1_s.jpg" alt="日焼けが著しいFACOM6130KF1">
+</div>
+
+<div class="body">
+<div class="block">
+	<p>板バネメカニカルスイッチの5000万回打鍵対応は伊達ではありません。ちゃんとメンテすれば尋常じゃない位長期間使い続けることができるはずです。ということで、ここではメンテナンスに関する情報をまとめておきます。</p>
+	<h3>キーの引っ掛かり解消法</h3>
+	<div class="block">
+		<p>基本的に、リニアでスムーズな打鍵感覚が味わえる板バネキーボードですが、長期間使用していると、スライダの間に引っ掛かりが発生することがあります。この場合、キーボードを開けて、締結のビスを全て外し、基板～スライダハウジング間に溜まったホコリを掃除機等で一掃すると解決することがあります。しかし、スライダやスライダハウジングの磨耗によって渋みが発生している場合は、これでは解決できません。</p>
+		<p>そこでフッ素系の潤滑剤(呉工業のドライファストルブ等)を使うと格段に良くなります。私がFKB2500を入手した時はフルキー部分が殆ど撃沈していたのですが、この技を試みたところ、全て劇的に改善されました。ここでフッ素系の潤滑剤を用いた理由は、非静音タイプのスライダの素材がフッ素樹脂らしい(出典:<A href="http://mousefan.telcontar.net/image/fujitsuten.htm">こちら</A>)ので、多分問題が少ないだろうという理由です。(ただ、板バネ以前のキーボードでは摺動軸がポリアセタールらしいのです。もしかしたらこっちなのかも…。)</p>
+		<p>以前、何も考えずにKURE CRC 5-56を吹きかけたのですが、潤滑効果は全く得られなかったので、油系の潤滑剤を用いるのは止めておいたほうが良さそうです(ところで、世間でよく「プラスチックが溶ける」といったことが言われていますが、こういった現象は発生しませんでした)。また、シリコン系のグリスを塗ってみたことがあるのですが、こちらは渋み解消の効果こそあったものの、重さが増すというか、マッタリしすぎてしまってあまり宜しくありませんでした。</p>
+		<p>また、スライダハウジングの磨耗が酷くなると、キーのぐら付きが大きくなりすぎてしまったり、打鍵が必要以上に煩くなってしまったりする影響の方が厄介になる場合があります。この場合は、<a href="http://hieroglyphe.blog47.fc2.com/blog-entry-49.html">こちらの方の方法</a>を参考にさせて頂くと良さそうです。つまり、摺動性と厚みがあるシートをスライダハウジングの摺動部に貼ることで、嵌合度を上げてグラつきを抑える作戦です。うちでも、特に磨耗が酷いカーソルキー等でいくつか試してみましたが、大分マシになりました。ハウジング側のこれ以上の磨耗を防止する効果もあるはずです。お悩みの方は試してみると良いかもしれません。</p>
+	</div>
+
+	<h3>スライダの変更で打鍵感触を変える</h3>
+	<div class="block">
+		<p>「構造の解説」ページでも述べた通り、このキーボードの打鍵感覚はスライダによっても大きく変わります。個人的には底付きの明確なタイプの方が好きなのですが、AT互換機向けに市販されていたものはいずれも静音系のスライダを採用していたため、趣味に完全に合致するものではありませんでした。</p>
+		<p>そこで、好みのスライダを採用している適当なキーボードを入手して、交換してしまう事を考えました。やり方は簡単です。交換元・交換先それぞれキートップを外し、スライダハウジングごと交換するだけで完了です。但し、ビス止めの対象になっているハウジングについては、予め分解してネジを外しておく必要があります。</p>
+		<p>この方法では、キーの数(特にスタビライザを使うものの数)が合わない場合などには、完全な交換ができません。その場合はスライダハウジングからスライダを分離して交換する必要があります(スライダを引っ張りながら、スライダの止め部をマイナスドライバ等で押すことで外せます)。</p>
+		<p>この交換作業によって、我が家の常用板バネキーボードは概ね非静音タイプの打鍵感を味わえるようになりました。一方、一つ一つ交換できるということは、特定のキーだけ打鍵感触を変えることができるということになります。これらを半田作業不要で自由に組み合わせることができるというのも、このキーボードの特徴ではないかと思うのですが、どうでしょう。</p>
+	</div>
+
+	<h3>キースイッチをいじってキーの重さを変える</h3>
+	<div class="block">
+		<p>手持ちのFMV-KB611(03A)は、非常に軽いタッチのスイッチが採用されています。これは、親指シフトには同時打鍵の関係で軽いスイッチの方が向いているため、といわれているのですが、あまりにも軽すぎると物足りなく感じられる場合があります。</p>
+		<p>そこで、<A href="http://kanaimaru.com/oya/kb211.htm">こちらのページ</A>で紹介されている方法と逆に、板バネ部分の角度を上げて、重くしてみようと考えました。</p>
+		<p>やり方は、キースイッチの板バネ部分を、上に向かって根元から少し曲げるだけです。曲げる角度はお好みでどうぞ。手でやるよりも、ラジオペンチ等を用いたほうが良いかもしれません。これによって、ウチのKB611は多少の重厚さを得ることができました。</p>
+		<p>但し、この改造を用いても接点接触に必要な力はあまり変わらないので注意が必要です。(例えば、Escキーを思いっきり重くして『STOPキーもどき!』とやっても、誤操作防止にはなりにくいです)</p>
+		<p>また、上記ページにあるように、キーの重さをさらに軽くすることもできます。つまり、逆に下へ向かって曲げるわけです。但し、あまり下げすぎるとキーが支えきれなくなってまうので程々にしておきましょう。</p>
+	</div>
+
+	<h3>テカりが出たキーの修復?</h3>
+	<div class="block">
+		<p>テカりの出ているキートップに、市販の水性アクリル塗料(透明つや消しのもの)を吹くことでテカりを消すという技が存在するようです。これをKB611のカーソルキーで試してみました。使用した塗料はカンペハピオの「水性シリコンカラースプレー(つや消しとうめい)」です。</p>
+		<p>結果としては、施工直後こそ大成功だったのですが、2週間も仕事場で使うと徐々に地のテカりが出てきてしまい、2・3カ月程で完全に元に戻ってしまいました…。耐久性の良い塗料を使えばもっと良い結果が出せるかもしれませんが、その手の塗料は溶剤がABSを侵すそうなので、安全を考えると使いたくはないものです。</p>
+	</div>
+</div>
+</div>
+
+<div class="footer">
+	<div style="text-align:center"><a href="fkb.htm">富士通の板バネ式メカニカルキーボードについてのまとめページ</a></div>
+	<div style="text-align:center"><a href="index.html">トップページ</a></div>
+	<div style="text-align:right; font-size:12px">Copyright(c) 2007 聖人(Kiyoto).</div>
+</div>
+
+<!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
+<script language="javascript" src="//analyzer51.fc2.com/ana/processor.php?uid=2455023" type="text/javascript"></script>
+<noscript><div align="right"><img src="//analyzer51.fc2.com/ana/icon.php?uid=2455023&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+
+</body>
+</html>
